@@ -1,0 +1,15 @@
+/* styles.css */
+:root {
+  /*———————————————————————————————————
+  Color
+  ———————————————————————————————————*/
+  --color-btn-blue: #1d4ed8; /* xanh dương */
+  --color-secondary: #f43f5e;
+
+  /*———————————————————————————————————
+  Transition
+  ———————————————————————————————————*/
+  --transition-fast: 150ms;
+  --transition-medium: 300ms;
+  --transition-slow: 600ms;
+}

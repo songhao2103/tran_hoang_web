@@ -20,11 +20,7 @@ export const MENU_CONFIG: TMenuConfig[] = [
   },
   {
     title: "Tin tức",
-    children: [
-      { title: "Tin tức 1", path: "/news/news-1" },
-      { title: "Tin tức 2", path: "/news/news-2" },
-      { title: "Tin tức 3", path: "/news/news-3" },
-    ],
+    path: ROUTE_PATH.NEWS,
   },
   { title: "Liên hệ", path: ROUTE_PATH.CONTACT },
 ];
