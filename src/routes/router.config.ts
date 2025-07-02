@@ -1,6 +1,6 @@
 import type { RouteConfig } from "./type";
 import MainLayout from "../layouts/MainLayout";
-import { ROUTE_PATH } from "./routePath";
+import { PREFIX_ROUTE_PATH, ROUTE_PATH } from "./routePath";
 import HomePage from "../pages/homepages";
 import Introduce from "../pages/introduce";
 import Contact from "../pages/contact";
@@ -14,5 +14,9 @@ export const publicRoutes: RouteConfig[] = [
   { path: ROUTE_PATH.CONTACT, component: Contact, layout: MainLayout },
   { path: ROUTE_PATH.NEWS, component: News, layout: MainLayout },
   { path: ROUTE_PATH.PRICE_LIST, component: PriceList, layout: MainLayout },
-  { path: ROUTE_PATH.SERVICES, component: Services, layout: MainLayout },
+  {
+    path: PREFIX_ROUTE_PATH.SERVICES + "/:slug",
+    component: Services,
+    layout: MainLayout,
+  },
 ];

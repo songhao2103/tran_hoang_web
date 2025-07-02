@@ -4,14 +4,16 @@ Title
 .title-h1 {
   font-size: 42px;
   font-weight: 700;
-  color: black;
-  line-height: 1.1;
+  color: var(--color-text-black);
+  letter-spacing: -2px;
+  line-height: 1 !important;
 }
 
 .title-h2 {
   font-size: 36px;
   font-weight: 700;
   color: black;
+  letter-spacing: -2px;
 }
 .title-h3 {
   font-size: 30px;
@@ -21,8 +23,13 @@ Title
 .title-h4 {
   font-size: 26px;
   font-weight: 600;
+  letter-spacing: -2px;
+  line-height: 1 !important;
 }
 .title-h5 {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-text-black);
 }
 .title-h6 {
 }

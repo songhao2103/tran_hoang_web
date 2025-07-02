@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
 import { motion } from "framer-motion";
-import "../style.css";
+import "../style/banner.css";
 
 import banner1 from "../../../assets/images/banners/banner1.jpg";
 import banner2 from "../../../assets/images/banners/banner2.png";

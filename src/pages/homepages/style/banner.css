@@ -53,9 +53,9 @@
 }
 
 .swiper-button-next::before {
-  background-image: url("../../assets/icons/right-arrow-svgrepo-com.svg");
+  background-image: url("../../../assets/icons/right-arrow-svgrepo-com.svg");
 }
 
 .swiper-button-prev::before {
-  background-image: url("../../assets/icons/left-arrow-svgrepo-com.svg");
+  background-image: url("../../../assets/icons/left-arrow-svgrepo-com.svg");
 }

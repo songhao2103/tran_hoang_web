@@ -1,7 +1,10 @@
 import BannerSlide from "./components/BannerSlide";
+import { Feedbacks } from "./components/Feedbacks";
 import IntroduceSections from "./components/IntroduceSections";
 import MoreAboutUs from "./components/MoreAboutUs";
 import ServicesOverview from "./components/ServicesOverview";
+import Statistical from "./components/Statistical";
+import Workflow from "./components/Workflow";
 
 const HomePage = () => {
   return (
@@ -22,9 +25,16 @@ const HomePage = () => {
       </div>
 
       {/* Services Overview */}
-      <div>
-        <ServicesOverview />
-      </div>
+      <ServicesOverview />
+
+      {/* Workflow */}
+      <Workflow />
+
+      {/* Feedbacks */}
+      <Feedbacks />
+
+      {/* Statistical */}
+      <Statistical />
     </div>
   );
 };

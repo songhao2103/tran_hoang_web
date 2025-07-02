@@ -1,7 +1,7 @@
 export interface TMenuConfig {
   title: string;
   icon?: string;
-  path?: string;
+  path: string;
   children?: TMenuConfig[];
   isExternal?: boolean;
   isActive?: boolean;

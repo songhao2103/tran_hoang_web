@@ -1,0 +1,4 @@
+swiper .swiper-wrapper {
+  /* chỉ chuyển transform, 800ms, fast->slow */
+  transition: transform 800ms cubic-bezier(0, 0, 0.58, 1) !important;
+}

@@ -1,17 +1,25 @@
 import type {
+  IFeedbackItem,
   IIntroduceSectionItem,
   IMoreAboutUs,
   IServiceOverviewItem,
+  IWorkflowStep,
 } from "./homepage.type";
 import { PiWarehouse } from "react-icons/pi";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
 import { IoIosFlash } from "react-icons/io";
 import bgcImage from "../../assets/images/banners/banner1.jpg";
+import imageUser1 from "../../assets/images/banners/banner1.jpg";
+import imageUser2 from "../../assets/images/banners/banner2.png";
+import imageUser3 from "../../assets/images/banners/banner3.jpg";
 import { LuPackageSearch } from "react-icons/lu";
 import { PiFireTruck } from "react-icons/pi";
 import { PiShippingContainerDuotone } from "react-icons/pi";
 import { RiSecurePaymentLine } from "react-icons/ri";
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//   Thông tin về chúng tôi
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const INTRODUCE_SECTIONS_DATA: IIntroduceSectionItem[] = [
   {
     icon: PiWarehouse,
@@ -33,6 +41,10 @@ export const INTRODUCE_SECTIONS_DATA: IIntroduceSectionItem[] = [
   },
 ];
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//   Thông tin thêm
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 export const MORE_ABOUT_US_DATA: IMoreAboutUs = {
   title: "Trần Hoàng Logistics giải pháp vận chuyển Trung – Việt",
   descriptions: [
@@ -43,6 +55,9 @@ export const MORE_ABOUT_US_DATA: IMoreAboutUs = {
   imageUrl: "../../../assets/images/introduces/introduce_homepage.jpg",
 };
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//   Danh sách dịch vụ
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const SERVICES_OVERVIEW_DATA: IServiceOverviewItem[] = [
   {
     icon: LuPackageSearch,
@@ -71,5 +86,74 @@ export const SERVICES_OVERVIEW_DATA: IServiceOverviewItem[] = [
     description:
       "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
     backgroundImage: bgcImage,
+  },
+];
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//   Quy trình làm việc
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+export const WORKFLOW_STEPS: IWorkflowStep[] = [
+  {
+    title: "Tiếp nhận và tư vấn",
+    description:
+      "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
+    imageUrl: bgcImage,
+  },
+  {
+    title: "Thu gom hàng tại Trung Quốc",
+    description:
+      "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
+    imageUrl: bgcImage,
+  },
+  {
+    title: "Thủ tục hải quan",
+    description:
+      "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
+    imageUrl: bgcImage,
+  },
+  {
+    title: "Vận chuyển qua biên",
+    description:
+      "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
+    imageUrl: bgcImage,
+  },
+  {
+    title: "Giao hàng tại Việt Nam",
+    description:
+      "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
+    imageUrl: bgcImage,
+  },
+  {
+    title: " Theo dõi và hỗ trợ  ",
+    description:
+      "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
+    imageUrl: bgcImage,
+  },
+];
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//   Quy trình làm việc
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+export const FAKE_FEEDBACK_DATAS: IFeedbackItem[] = [
+  {
+    userImage: imageUser1,
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum impedit corporis id omnis maxime assumenda sequi aliquid",
+    userName: "Song Hào",
+    note: "Nhân viên",
+  },
+  {
+    userImage: imageUser2,
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum impedit corporis id omnis maxime assumenda sequi aliquid",
+    userName: "Song Hào",
+    note: "Nhân viên",
+  },
+  {
+    userImage: imageUser3,
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum impedit corporis id omnis maxime assumenda sequi aliquid",
+    userName: "Song Hào",
+    note: "Nhân viên",
   },
 ];

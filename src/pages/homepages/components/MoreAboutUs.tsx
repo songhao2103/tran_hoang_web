@@ -4,13 +4,19 @@ import introduceImage from "../../../assets/images/introduces/introduce_homepage
 import LayoutContent from "../../../layouts/LayoutContent";
 import ButtonCustom from "../../../components/button/ButtonCustom";
 import SlideInView from "../../../components/scrolls/SlideInView";
+import useWindowWidth from "../../../hooks/dom/useWindownWidth";
 
 const MoreAboutUs = () => {
+  const windowWidth = useWindowWidth();
   return (
     <LayoutContent>
       <div className="flex flex-col md:flex-row items-center justify-center gap-x-10 mt-[100px]">
         {/* Nội dung trượt lên */}
-        <SlideInView direction="up" triggerOnce className="w-full p-10">
+        <SlideInView
+          direction="up"
+          triggerOnce
+          className="w-full p-10 overflow-hidden"
+        >
           <p className="mb-10 title-h1">{MORE_ABOUT_US_DATA.title}</p>
           {MORE_ABOUT_US_DATA.descriptions.map((desc, index) => (
             <div key={index} className="flex mb-4 gap-x-4">
@@ -26,13 +32,20 @@ const MoreAboutUs = () => {
         </SlideInView>
 
         {/* Ảnh trượt từ phải sang */}
-        <SlideInView direction="up" delay={0.2} className="w-full">
-          <img
-            src={introduceImage}
-            alt=""
-            className="object-cover w-full h-auto"
-          />
-        </SlideInView>
+        {windowWidth > 1024 && (
+          <SlideInView
+            direction="up"
+            delay={0.2}
+            className="w-full"
+            fromOutside
+          >
+            <img
+              src={introduceImage}
+              alt=""
+              className="object-cover w-full h-auto"
+            />
+          </SlideInView>
+        )}
       </div>
     </LayoutContent>
   );

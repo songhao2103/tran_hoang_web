@@ -1,8 +1,16 @@
+export const PREFIX_ROUTE_PATH = {
+  SERVICES: "/dich-vu",
+};
+
 export const ROUTE_PATH = {
   HOME: "/",
   INTRODUCE: "/gioi-thieu",
-  SERVICES: "/dich-vu",
   PRICE_LIST: "/bang-gia",
   NEWS: "/tin-tuc",
   CONTACT: "/lien-he",
+  FIND_SOURCE_GOODS: PREFIX_ROUTE_PATH.SERVICES + "/tim-nguon-hang",
+  OFFICIAL_TRANSPORTATION:
+    PREFIX_ROUTE_PATH.SERVICES + "/van-chuyen-chinh-ngach",
+  COMBINE_CONTAINERS: PREFIX_ROUTE_PATH.SERVICES + "/ghep-cotainers",
+  PAY_ON_BEHALF: PREFIX_ROUTE_PATH.SERVICES + "/thanh-toan-ho",
 };

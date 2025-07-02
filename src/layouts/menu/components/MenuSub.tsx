@@ -1,59 +1,150 @@
 // src/components/MenuSub.tsx
-import React from "react";
+import React, { useState } from "react";
 import type { TMenuConfig } from "../type";
 import { IoIosArrowDown } from "react-icons/io";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useHeader } from "../../header/constance";
+import { motion, type Variants } from "framer-motion";
+import useWindowWidth from "../../../hooks/dom/useWindownWidth";
+import { isMenuActive } from "../constance";
+import { useNavigate } from "react-router-dom";
 
 interface MenuSubProps {
   menu: TMenuConfig;
+  isChildren?: boolean;
 }
 
-const MenuSub: React.FC<MenuSubProps> = ({ menu }) => {
+const containerVariants: Variants = {
+  rest: {},
+  open: {},
+};
+
+const submenuVariants: Variants = {
+  rest: {
+    opacity: 0,
+    height: 0,
+    transition: { duration: 0.2, ease: "easeOut" },
+  },
+  open: {
+    opacity: 1,
+    height: "auto",
+    transition: { duration: 0.3, ease: "easeOut" },
+  },
+};
+
+const MenuSub: React.FC<MenuSubProps> = ({ menu, isChildren }) => {
   const { toggleMenuOpen } = useHeader();
-  return (
-    <div className="group relative w-full">
-      {/* Heading */}
-      <NavLink
-        to={menu.path || "#"}
-        className={({ isActive }) =>
-          `text-base font-semibold flex items-center gap-x-2 justify-between px-4 py-2 rounded-md cursor-pointer select-none transition-colors duration-200 ${
-            isActive ? "text-secondary" : "hover:text-secondary"
-          }`
-        }
-        onClick={toggleMenuOpen}
+  const navigate = useNavigate();
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth <= 1024;
+  const location = useLocation();
+
+  const active = isMenuActive(menu, location.pathname); // dùng cho style
+
+  // state cho mobile: mở/đóng submenu
+  const [isOpenMobile, setIsOpenMobile] = useState(false);
+
+  // handle click trên mobile
+  const handleMobileClick = () => {
+    if (menu.children) {
+      setIsOpenMobile((prev) => !prev);
+    } else {
+      // vẫn đóng menu toàn cục khi bấm link con
+      navigate(menu.path);
+      toggleMenuOpen();
+    }
+  };
+
+  // --- DÀNH CHO DESKTOP ---
+  if (!isMobile) {
+    return (
+      <motion.div
+        className="relative w-full"
+        initial="rest"
+        whileHover="open"
+        variants={containerVariants}
       >
-        <span className="flex-shrink-0">{menu.title}</span>
+        <NavLink
+          to={menu.path || "#"}
+          className={`text-base font-semibold flex items-center justify-between px-4 py-2 rounded-md cursor-pointer select-none transition-colors duration-200 gap-x-1 ${
+            active
+              ? "text-secondary"
+              : `hover:text-secondary ${
+                  isChildren ? "text-dark" : "text-gray-200"
+                }`
+          }`}
+          onClick={(e) => {
+            toggleMenuOpen();
+            if (menu.children) {
+              e.preventDefault();
+            }
+          }}
+        >
+          <span className="flex-shrink-0">{menu.title}</span>
+          {menu.children && (
+            <IoIosArrowDown
+              className="flex-shrink-0 w-4 h-4 mt-1 transition-transform duration-200"
+              style={{ transform: "rotate(0deg)" }}
+            />
+          )}
+        </NavLink>
 
         {menu.children && (
-          <span>
-            <IoIosArrowDown size={15} className="mt-1" />
-          </span>
+          <motion.div
+            className="absolute left-0 top-full w-auto min-w-max overflow-hidden rounded-md shadow-md bg-white z-10"
+            variants={submenuVariants}
+          >
+            <div className="p-1">
+              {menu.children.map((child) => (
+                <MenuSub
+                  key={child.path || child.title}
+                  menu={child}
+                  isChildren
+                />
+              ))}
+            </div>
+          </motion.div>
         )}
-      </NavLink>
+      </motion.div>
+    );
+  }
 
-      {/* Submenu */}
+  // --- DÀNH CHO MOBILE ---
+  return (
+    <div className="w-full flex flex-col">
+      <button
+        className={`w-full text-left text-base font-semibold flex items-center justify-between px-4 py-2 rounded-md cursor-pointer select-none transition-colors duration-200 gap-x-1 hover:bg-gray-100 ${
+          active ? "text-secondary" : "text-dark"
+        }`}
+        onClick={handleMobileClick}
+      >
+        <span>{menu.title}</span>
+        {menu.children && (
+          <IoIosArrowDown
+            className={`flex-shrink-0 w-5 h-5 transition-transform duration-200 ${
+              isOpenMobile ? "rotate-180" : "rotate-0"
+            }`}
+          />
+        )}
+      </button>
+
       {menu.children && (
-        <div
-          className={`
-            absolute left-0 top-full w-full mt-0
-            overflow-hidden rounded-md shadow-md
-            opacity-0 max-h-0
-            group-hover:opacity-100 group-hover:max-h-screen
-            transition-[max-height,opacity] duration-300 ease-in-out
-            bg-white
-          `}
+        <motion.div
+          className="overflow-hidden"
+          initial="rest"
+          animate={isOpenMobile ? "open" : "rest"}
+          variants={submenuVariants}
         >
-          <div className="p-1">
+          <div className="flex flex-col pl-4">
             {menu.children.map((child) => (
               <MenuSub
                 key={child.path || child.title}
                 menu={child}
-                // active={child.path === /* cái path active của bạn */}
+                isChildren
               />
             ))}
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );

@@ -24,3 +24,16 @@ export interface IServiceOverviewItem {
   icon: IconType;
   backgroundImage: string;
 }
+
+export interface IWorkflowStep {
+  imageUrl: string;
+  title: string;
+  description: string;
+}
+
+export interface IFeedbackItem {
+  userImage: string;
+  content: string;
+  userName: string;
+  note: string;
+}
