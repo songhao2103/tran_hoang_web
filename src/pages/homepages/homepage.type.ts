@@ -17,3 +17,10 @@ export interface IMoreAboutUs {
   buttonLabel: string;
   imageUrl: string;
 }
+
+export interface IServiceOverviewItem {
+  title: string;
+  description: string;
+  icon: IconType;
+  backgroundImage: string;
+}

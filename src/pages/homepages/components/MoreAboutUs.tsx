@@ -11,9 +11,9 @@ const MoreAboutUs = () => {
       <div className="flex flex-col md:flex-row items-center justify-center gap-x-10 mt-[100px]">
         {/* Nội dung trượt lên */}
         <SlideInView direction="up" triggerOnce className="w-full p-10">
-          <p className="title-h1 mb-10">{MORE_ABOUT_US_DATA.title}</p>
+          <p className="mb-10 title-h1">{MORE_ABOUT_US_DATA.title}</p>
           {MORE_ABOUT_US_DATA.descriptions.map((desc, index) => (
-            <div key={index} className="flex gap-x-4 mb-4">
+            <div key={index} className="flex mb-4 gap-x-4">
               <div className="w-[50px] h-[50px] rounded-full flex-shrink-0 flex items-center justify-center border border-secondary text-secondary">
                 <IoMdCheckmark size={22} />
               </div>

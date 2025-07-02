@@ -13,7 +13,7 @@ interface SlideInViewProps extends HTMLMotionProps<"div"> {
   delay?: number;
   duration?: number;
   distance?: number;
-  fromOutside?: boolean; // 👈 thêm dòng này
+  fromOutside?: boolean;
   as?: keyof JSX.IntrinsicElements;
 }
 

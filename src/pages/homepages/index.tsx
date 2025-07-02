@@ -1,10 +1,11 @@
 import BannerSlide from "./components/BannerSlide";
 import IntroduceSections from "./components/IntroduceSections";
 import MoreAboutUs from "./components/MoreAboutUs";
+import ServicesOverview from "./components/ServicesOverview";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="w-full">
       {/* Banner - không chứa introduce */}
       <div className="relative z-0">
         <BannerSlide />
@@ -18,6 +19,11 @@ const HomePage = () => {
       {/* MoreAboutUs nằm sau IntroduceSections */}
       <div className="mt-[50px]">
         <MoreAboutUs />
+      </div>
+
+      {/* Services Overview */}
+      <div>
+        <ServicesOverview />
       </div>
     </div>
   );

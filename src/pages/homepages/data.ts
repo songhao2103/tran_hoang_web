@@ -1,7 +1,16 @@
-import type { IIntroduceSectionItem, IMoreAboutUs } from "./homepage.type";
+import type {
+  IIntroduceSectionItem,
+  IMoreAboutUs,
+  IServiceOverviewItem,
+} from "./homepage.type";
 import { PiWarehouse } from "react-icons/pi";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
 import { IoIosFlash } from "react-icons/io";
+import bgcImage from "../../assets/images/banners/banner1.jpg";
+import { LuPackageSearch } from "react-icons/lu";
+import { PiFireTruck } from "react-icons/pi";
+import { PiShippingContainerDuotone } from "react-icons/pi";
+import { RiSecurePaymentLine } from "react-icons/ri";
 
 export const INTRODUCE_SECTIONS_DATA: IIntroduceSectionItem[] = [
   {
@@ -33,3 +42,34 @@ export const MORE_ABOUT_US_DATA: IMoreAboutUs = {
   buttonLabel: "Chi tiết",
   imageUrl: "../../../assets/images/introduces/introduce_homepage.jpg",
 };
+
+export const SERVICES_OVERVIEW_DATA: IServiceOverviewItem[] = [
+  {
+    icon: LuPackageSearch,
+    title: "Tìm nguồn hàng Trung Quốc",
+    description:
+      "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
+    backgroundImage: bgcImage,
+  },
+  {
+    icon: PiFireTruck,
+    title: "Vận chuyển chính ngạch",
+    description:
+      "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
+    backgroundImage: bgcImage,
+  },
+  {
+    icon: PiShippingContainerDuotone,
+    title: "Ghép Container chính ngạch",
+    description:
+      "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
+    backgroundImage: bgcImage,
+  },
+  {
+    icon: RiSecurePaymentLine,
+    title: "Thanh toán hộ",
+    description:
+      "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
+    backgroundImage: bgcImage,
+  },
+];
