@@ -18,7 +18,7 @@ export function useSlideInView({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
     once: triggerOnce,
-    margin: "0px 0px 90% 0px",
+    margin: "0px 0px 50% 0px",
   });
 
   const getInitial = () => {

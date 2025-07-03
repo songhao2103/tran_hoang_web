@@ -24,7 +24,7 @@ const SlideInView: React.FC<SlideInViewProps> = ({
   delay = 0, //Độ trễ
   duration = 1.2, //thời gian chạy
   distance = 500, //khoảng cách trượt
-  fromOutside = true, //Nếu true thì sẽ bay vào ngoài màn hình
+  fromOutside = false, //Nếu true thì sẽ bay vào ngoài màn hình
   className,
   as = "div",
   ...rest

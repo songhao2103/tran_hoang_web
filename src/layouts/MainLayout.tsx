@@ -4,6 +4,8 @@ import { motion, type Variants } from "framer-motion";
 import Header from "./header/Header";
 import { HeaderProvider } from "./header/HeaderContext";
 import Footer from "./footer";
+import Breadcrumb from "../components/breadcrumb/Breadcrumb";
+import { useLocation } from "react-router-dom";
 
 const headerVariants: Variants = {
   hidden: {
@@ -20,6 +22,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
   const [showHeader, setShowHeader] = useState(true);
   const prevScrollY = useRef(0);
   const scrolledUpEnough = useRef(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,11 +70,13 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
         </motion.div>
       </HeaderProvider>
 
+      {location.pathname !== "/" && <Breadcrumb />}
+
       <div className="flex-1 max-w-[1820px] w-full mx-auto px-4 xl:px-2 text-gray-600 font-medium">
         {children}
       </div>
 
-      <div className="mt-auto">
+      <div className="mt-auto w-full">
         <Footer />
       </div>
     </div>

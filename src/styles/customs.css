@@ -12,19 +12,20 @@ Title
 .title-h2 {
   font-size: 36px;
   font-weight: 700;
-  color: black;
+  color: var(--color-text-black);
   letter-spacing: -2px;
 }
 .title-h3 {
   font-size: 30px;
-  font-weight: 600;
-  color: black;
+  font-weight: 700;
+  color: var(--color-text-black);
 }
 .title-h4 {
   font-size: 26px;
   font-weight: 600;
   letter-spacing: -2px;
   line-height: 1 !important;
+  color: var(--color-text-black);
 }
 .title-h5 {
   font-weight: 700;
@@ -32,6 +33,9 @@ Title
   color: var(--color-text-black);
 }
 .title-h6 {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-text-black);
 }
 .title-h7 {
 }
@@ -71,4 +75,16 @@ Transition
 
 .ease-in-out {
   transition-timing-function: ease-in-out;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }

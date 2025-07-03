@@ -32,7 +32,6 @@ export const MENU_CONFIG: TMenuConfig[] = [
         path: ROUTE_PATH.PAY_ON_BEHALF,
       },
     ],
-    // path: ROUTE_PATH.SERVICES,
   },
   {
     title: "Bảng giá",

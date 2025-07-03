@@ -1,25 +1,53 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { ROUTE_PATH } from "../../routes/routePath";
+import LayoutContent from "../../layouts/LayoutContent";
+import { MENU_CONFIG } from "../../layouts/menu/menu.config";
+import type { TMenuConfig } from "../../layouts/menu/type";
+import { PREFIX_ROUTE_PATH } from "../../routes/routePath";
+import ServiceContent from "./components/ServiceContent";
+import SideBar from "./components/SideBarServices";
+import Contacts from "./components/Contacts";
 
-const services: Record<string, string> = {
-  [ROUTE_PATH.FIND_SOURCE_GOODS]: "Tìm nguồn hàng Trung Quốc",
-  [ROUTE_PATH.OFFICIAL_TRANSPORTATION]: "Vận chuyển chính ngạch",
-  [ROUTE_PATH.COMBINE_CONTAINERS]: "Ghép Containets",
-  [ROUTE_PATH.PAY_ON_BEHALF]: "Thanh toán hộ",
-};
 const Services = () => {
   const location = useLocation();
-  const [serviceType, setServiceType] = useState<string | undefined>(undefined);
+  const [activeService, setActiveService] = useState<TMenuConfig | undefined>(
+    undefined
+  );
+
+  const services = useMemo(() => {
+    return (
+      MENU_CONFIG.find(
+        (menu: TMenuConfig) => menu.path === PREFIX_ROUTE_PATH.SERVICES
+      )?.children || []
+    );
+  }, [MENU_CONFIG]);
 
   useEffect(() => {
-    setServiceType(location.pathname);
+    if (services) {
+      const currentService = services?.find(
+        (service: TMenuConfig) => service.path === location.pathname
+      );
+      setActiveService(currentService);
+    }
   }, [location]);
 
   return (
-    <div>
-      <h1>{serviceType ? services?.[serviceType] : "Chưa xác định"}</h1>
-    </div>
+    <LayoutContent>
+      <div className="flex gap-x-10 flex-col-reverse xl:flex-row">
+        {activeService && (
+          <div className="flex flex-col gap-y-10 md:flex-row md:gap-x-6 mt-10 xl:mt-0 xl:flex-col xl:gap-y-10">
+            <SideBar activeService={activeService} services={services} />
+            <Contacts />
+          </div>
+        )}
+
+        {activeService && (
+          <div className="w-full">
+            <ServiceContent activeService={activeService} />
+          </div>
+        )}
+      </div>
+    </LayoutContent>
   );
 };
 

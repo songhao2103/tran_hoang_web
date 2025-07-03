@@ -33,12 +33,7 @@ const MoreAboutUs = () => {
 
         {/* Ảnh trượt từ phải sang */}
         {windowWidth > 1024 && (
-          <SlideInView
-            direction="up"
-            delay={0.2}
-            className="w-full"
-            fromOutside
-          >
+          <SlideInView direction="up" delay={0.2} className="w-full">
             <img
               src={introduceImage}
               alt=""

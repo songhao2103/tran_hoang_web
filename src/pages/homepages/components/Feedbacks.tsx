@@ -31,13 +31,7 @@ const FeedbackItem = ({ feedback }: { feedback: IFeedbackItem }) => {
 export const Feedbacks = () => {
   return (
     <LayoutContent>
-      <SlideInView
-        direction="up"
-        fromOutside
-        triggerOnce
-        className="w-full"
-        delay={0.3}
-      >
+      <SlideInView direction="up" triggerOnce className="w-full" delay={0.3}>
         <div className="flex flex-col xl:flex-row mt-[100px] justify-between">
           <p className="title-h1 text-center w-full xl:text-start mb-[60px] xl:mb-0 xl:w-[40%] mt-6">
             Trần Hoàng logistic số một
