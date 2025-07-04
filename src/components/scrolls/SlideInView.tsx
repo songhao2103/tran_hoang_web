@@ -23,7 +23,7 @@ const SlideInView: React.FC<SlideInViewProps> = ({
   triggerOnce = true, //Chỉ chạy một lần?
   delay = 0, //Độ trễ
   duration = 1.2, //thời gian chạy
-  distance = 500, //khoảng cách trượt
+  distance = 300, //khoảng cách trượt
   fromOutside = false, //Nếu true thì sẽ bay vào ngoài màn hình
   className,
   as = "div",

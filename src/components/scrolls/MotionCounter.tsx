@@ -12,6 +12,7 @@ interface CounterProps {
   duration?: number;
   className?: string;
   delay?: number;
+  plusKey?: boolean;
 }
 
 const MotionCounter = ({
@@ -19,6 +20,7 @@ const MotionCounter = ({
   duration = 2,
   className,
   delay,
+  plusKey = true,
 }: CounterProps) => {
   const ref = useRef<HTMLParagraphElement>(null);
   const motionVal = useMotionValue(0);
@@ -41,9 +43,9 @@ const MotionCounter = ({
   }, [inView, end, duration, motionVal]);
 
   return (
-    <p ref={ref} className="font-bold text-4xl">
+    <p ref={ref} className="text-4xl font-bold">
       <motion.span className={className}>{formatted}</motion.span>
-      {inView && "+"}
+      {inView && plusKey && "+"}
     </p>
   );
 };
