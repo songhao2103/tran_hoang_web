@@ -85,6 +85,7 @@ Transition
     transform: rotate(360deg);
   }
 }
+
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
