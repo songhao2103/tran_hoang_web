@@ -4,6 +4,7 @@ export const PREFIX_ROUTE_PATH = {
 
 export const ROUTE_PATH = {
   HOME: "/",
+  NOT_FOUND: "*",
   INTRODUCE: "/gioi-thieu",
   PRICE_LIST: "/bang-gia",
   NEWS: "/tin-tuc",
