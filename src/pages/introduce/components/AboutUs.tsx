@@ -4,7 +4,7 @@ import car from "../../../assets/icons/car-about-us.png";
 
 const AboutUs = () => {
   return (
-    <div className="w-full lg:w-[45%] ">
+    <div className="w-full ">
       <div className="flex flex-col gap-y-6">
         <p className="title-h2 !font-bold">
           Trần Hoàng Logistics – Giải pháp vận chuyển toàn diện tuyến Trung –
@@ -16,7 +16,7 @@ const AboutUs = () => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-y-4 mt-4">
+      <div className="flex flex-col mt-4 gap-y-4">
         <div className="flex items-center gap-x-6">
           <img src={world} alt="" className="w-[80px] h-[80px] object-cover" />
           <div>

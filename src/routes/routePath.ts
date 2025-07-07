@@ -8,6 +8,7 @@ export const ROUTE_PATH = {
   PRICE_LIST: "/bang-gia",
   NEWS: "/tin-tuc",
   CONTACT: "/lien-he",
+  NEW_DETAIL: "/tin-tuc/:id",
   FIND_SOURCE_GOODS: PREFIX_ROUTE_PATH.SERVICES + "/tim-nguon-hang",
   OFFICIAL_TRANSPORTATION:
     PREFIX_ROUTE_PATH.SERVICES + "/van-chuyen-chinh-ngach",

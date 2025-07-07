@@ -1,6 +1,7 @@
 /*———————————————————————————————————
 Title
 ———————————————————————————————————*/
+/* Default (Desktop) */
 .title-h1 {
   font-size: 42px;
   font-weight: 700;
@@ -15,11 +16,13 @@ Title
   color: var(--color-text-black);
   letter-spacing: -2px;
 }
+
 .title-h3 {
   font-size: 30px;
   font-weight: 700;
   color: var(--color-text-black);
 }
+
 .title-h4 {
   font-size: 26px;
   font-weight: 600;
@@ -27,17 +30,73 @@ Title
   line-height: 1 !important;
   color: var(--color-text-black);
 }
+
 .title-h5 {
   font-weight: 700;
   font-size: 18px;
   color: var(--color-text-black);
 }
+
 .title-h6 {
   font-weight: 700;
   font-size: 16px;
   color: var(--color-text-black);
 }
+
 .title-h7 {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-text-black);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .title-h1 {
+    font-size: 36px;
+  }
+  .title-h2 {
+    font-size: 30px;
+  }
+  .title-h3 {
+    font-size: 26px;
+  }
+  .title-h4 {
+    font-size: 22px;
+  }
+  .title-h5 {
+    font-size: 16px;
+  }
+  .title-h6 {
+    font-size: 15px;
+  }
+  .title-h7 {
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .title-h1 {
+    font-size: 28px;
+  }
+  .title-h2 {
+    font-size: 24px;
+  }
+  .title-h3 {
+    font-size: 20px;
+  }
+  .title-h4 {
+    font-size: 18px;
+  }
+  .title-h5 {
+    font-size: 16px;
+  }
+  .title-h6 {
+    font-size: 14px;
+  }
+  .title-h7 {
+    font-size: 12px;
+  }
 }
 
 /*———————————————————————————————————

@@ -5,10 +5,11 @@ import { FAKE_FEEDBACK_DATAS } from "../data";
 import type { IFeedbackItem } from "../homepage.type";
 import "../style/feedback.css";
 import SlideInView from "../../../components/scrolls/SlideInView";
+import SectionTitle from "../../../components/titles/SectionTitle";
 
 const FeedbackItem = ({ feedback }: { feedback: IFeedbackItem }) => {
   return (
-    <div className="flex pl-[50px] gap-x-10">
+    <div className="flex pl-[50px] gap-x-10 cursor-grab active:cursor-grabbing">
       <div className="hidden sm:block">
         <img
           src={feedback.userImage}
@@ -33,9 +34,12 @@ export const Feedbacks = () => {
     <LayoutContent>
       <SlideInView direction="up" triggerOnce className="w-full" delay={0.3}>
         <div className="flex flex-col xl:flex-row mt-[100px] justify-between">
-          <p className="title-h1 text-center w-full xl:text-start mb-[60px] xl:mb-0 xl:w-[40%] mt-6">
-            Trần Hoàng logistic số một
-          </p>
+          <div className="flex flex-col w-full xl:w-[40%]">
+            <SectionTitle title="03_KHÁCH HÀNG NÓI VỀ CHÚNG TÔI" />
+            <p className="title-h1 text-center w-full xl:text-start mb-[60px] xl:mb-0 ">
+              Trần Hoàng logistic số một
+            </p>
+          </div>
 
           <div className="w-full xl:w-[55%]">
             <Swiper
@@ -49,7 +53,7 @@ export const Feedbacks = () => {
               }}
               freeMode={true}
               speed={800}
-              className="overflow-hidden h-full"
+              className="h-full overflow-hidden"
             >
               {FAKE_FEEDBACK_DATAS.map((feedback, index) => (
                 <SwiperSlide key={index}>

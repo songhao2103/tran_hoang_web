@@ -3,8 +3,8 @@ import { FaFacebookF, FaFacebookMessenger } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-black p-10 flex justify-center w-screen mt-[150px]">
-      <div className="flex max-w-[1820px] gap-x-[100px]">
+    <div className="bg-black p-10 flex justify-center w-full mt-[50px] md:mt-[100px] xl:mt-[150px] flex-col lg:flex-row">
+      <div className="flex max-w-[1820px] gap-x-[100px] flex-col lg:flex-row">
         <div className="flex flex-col gap-y-6">
           <Logo />
           <p className="title-h4 !text-white">Trần Hoàng Logistics</p>
@@ -14,32 +14,32 @@ const Footer = () => {
           <div className="flex flex-col gap-y-2">
             <div className="flex items-center gap-x-3">
               <p className="text-sm font-semibold text-white">Địa chỉ:</p>
-              <p className="text-gray-400 text-sm">
+              <p className="text-sm text-gray-400">
                 33 ngõ 41 Thái Hà, Đống Đa, Hà Nội
               </p>
             </div>
             <div className="flex items-center gap-x-3">
               <p className="text-sm font-semibold text-white">Email:</p>
-              <p className="text-gray-400 text-sm">tranhoang@gmail.com</p>
+              <p className="text-sm text-gray-400">tranhoang@gmail.com</p>
             </div>
             <div className="flex items-center gap-x-3">
               <p className="text-sm font-semibold text-white">Phone:</p>
-              <p className="text-gray-400 text-sm">0967044241</p>
+              <p className="text-sm text-gray-400">0967044241</p>
             </div>
           </div>
           <div className="flex items-center gap-x-4">
             <a href="">
-              <div className="flex items-center justify-center h-8 w-8 rounded-full bg-white">
+              <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full">
                 <FaFacebookF className="text-gray-800" size={18} />
               </div>
             </a>
 
             <a href="">
-              <div className="flex items-center justify-center h-8 w-8 rounded-full bg-white">
+              <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full">
                 <FaFacebookMessenger className="text-gray-800" size={18} />
               </div>
             </a>
-            <div className="h-8 w-8 rounded-full bg-white flex items-center justify-center">
+            <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full">
               <p className="text-xs font-bold text-gray-800">Zalo</p>
             </div>
           </div>

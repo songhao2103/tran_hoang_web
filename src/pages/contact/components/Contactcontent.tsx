@@ -5,8 +5,7 @@ import { MdLocationOn, MdOutlineMail } from "react-icons/md";
 const Contactcontent = () => {
   return (
     <div>
-      {" "}
-      <div className="bg-dark w-full font-sans p-10">
+      <div className="w-full p-10 font-sans bg-dark">
         <h2 className="title-h2 !text-white">LIÊN HỆ</h2>
         <p className="text-gray-300">
           Nếu bạn cần hỗ trợ về dịch vụ vận chuyển hoặc tư vấn đặt hàng, hãy
@@ -14,8 +13,8 @@ const Contactcontent = () => {
           phục vụ bạn!
         </p>
 
-        <ul className="mt-2 space-y-4 w-full p-5">
-          <li className="flex items-center gap-x-8 pb-4 border-b border-gray-500">
+        <ul className="w-full p-5 mt-2 space-y-4">
+          <li className="flex items-center pb-4 border-b border-gray-500 gap-x-8">
             <MdOutlineMail size={35} className="text-secondary" />
 
             <div>
@@ -23,7 +22,7 @@ const Contactcontent = () => {
               <p className="!text-light">tranhoang@gmail.com</p>
             </div>
           </li>
-          <li className="flex items-center gap-x-8 pb-4 border-b border-gray-500">
+          <li className="flex items-center pb-4 border-b border-gray-500 gap-x-8">
             <FiPhone size={35} className="text-secondary" />
 
             <div>
@@ -31,7 +30,7 @@ const Contactcontent = () => {
               <p className="!text-light">0123123123</p>
             </div>
           </li>
-          <li className="flex items-center gap-x-8 pb-4 border-b border-gray-500">
+          <li className="flex items-center pb-4 border-b border-gray-500 gap-x-8">
             <MdLocationOn size={35} className="text-secondary" />
 
             <div>

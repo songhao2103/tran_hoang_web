@@ -43,7 +43,7 @@ const SlideInView: React.FC<SlideInViewProps> = ({
       initial={initialProps}
       animate={animateProps}
       transition={{ duration, delay, ease: [0.33, 1, 0.68, 1] }}
-      className={className}
+      className={`w-full ${className}`}
       {...rest}
     >
       {children}

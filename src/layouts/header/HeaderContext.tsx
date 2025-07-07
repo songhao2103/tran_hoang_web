@@ -6,6 +6,7 @@ import useWindowWidth from "../../hooks/dom/useWindownWidth";
 export const HeaderProvider = ({ children }: { children: ReactNode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isInputSearchOpen, setIsInputSearchOpen] = useState(false);
 
   const windownWidth = useWindowWidth();
 
@@ -18,6 +19,9 @@ export const HeaderProvider = ({ children }: { children: ReactNode }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleToggleInputSearchOpen = () => {
+    setIsInputSearchOpen(!isInputSearchOpen);
+  };
   return (
     <HeaderContext.Provider
       value={{
@@ -25,6 +29,8 @@ export const HeaderProvider = ({ children }: { children: ReactNode }) => {
         setIsScrolled,
         isMenuOpen,
         toggleMenuOpen: handleToggleMenuOpen,
+        isInputSearchOpen,
+        toggleInputSearchOpen: handleToggleInputSearchOpen,
       }}
     >
       {children}

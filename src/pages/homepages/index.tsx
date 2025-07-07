@@ -15,7 +15,7 @@ const HomePage = () => {
       </div>
 
       {/* Introduce - đè lên banner */}
-      <div className="relative z-10 -mt-[100px] flex justify-center">
+      <div className="relative z-10  -mt-[30px] lg:-mt-[60px] xl:-mt-[100px] flex justify-center">
         <IntroduceSections />
       </div>
 

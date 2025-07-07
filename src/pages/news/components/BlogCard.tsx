@@ -1,12 +1,18 @@
 import React from "react";
 import type { IBlogItem } from "../new.type";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 interface IBlogItemProps {
   blog: IBlogItem;
 }
 
 const BlogItem: React.FC<IBlogItemProps> = ({ blog }) => {
+  const navigate = useNavigate();
+  const handleNavigaeToNewDetail = (id: number) => {
+    navigate(`/tin-tuc/${id}`);
+  };
+
   return (
     <div className="border-b shadow-lg pb-12 rounded-[10px]">
       <div className="relative mb-10 overflow-hidden shadow">
@@ -26,7 +32,7 @@ const BlogItem: React.FC<IBlogItemProps> = ({ blog }) => {
           }}
         />
         <div className="text-sm bg-secondary w-[60px] h-[60px] flex items-center justify-center flex-col text-white shadow-md absolute right-[20px] bottom-[10px] rounded-[5px]">
-          <p className="font-bold text-2xl">
+          <p className="text-2xl font-bold">
             {new Date(blog.createAt).toLocaleDateString("en-US", {
               day: "2-digit",
             })}
@@ -39,8 +45,11 @@ const BlogItem: React.FC<IBlogItemProps> = ({ blog }) => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-y-4 mt-10 px-10">
-        <p className="title-h3 !font-semibold cursor-pointer hover:!text-secondary">
+      <div className="flex flex-col px-10 mt-10 gap-y-4">
+        <p
+          className="title-h3 !font-semibold cursor-pointer hover:!text-secondary"
+          onClick={() => handleNavigaeToNewDetail(blog.id)}
+        >
           {blog.title}
         </p>
         <div className="line-clamp-2">{blog.content}</div>
@@ -54,7 +63,7 @@ const BlogItem: React.FC<IBlogItemProps> = ({ blog }) => {
             </p>
           ))}
         </div>
-        <div className="flex gap-x-10 mt-6 justify-center ">
+        <div className="flex justify-center mt-6 gap-x-10 ">
           {blog.contentImage?.map((img, i) => (
             <img
               key={i}

@@ -5,6 +5,7 @@ import LayoutContent from "../../../layouts/LayoutContent";
 import ButtonCustom from "../../../components/button/ButtonCustom";
 import SlideInView from "../../../components/scrolls/SlideInView";
 import useWindowWidth from "../../../hooks/dom/useWindownWidth";
+import SectionTitle from "../../../components/titles/SectionTitle";
 
 const MoreAboutUs = () => {
   const windowWidth = useWindowWidth();
@@ -17,7 +18,11 @@ const MoreAboutUs = () => {
           triggerOnce
           className="w-full p-10 overflow-hidden"
         >
-          <p className="mb-10 title-h1">{MORE_ABOUT_US_DATA.title}</p>
+          <div>
+            <SectionTitle title="01_THÔNG TIN VỀ CHÚNG TÔI" />
+            <p className="mb-10 title-h1">{MORE_ABOUT_US_DATA.title}</p>
+          </div>
+
           {MORE_ABOUT_US_DATA.descriptions.map((desc, index) => (
             <div key={index} className="flex mb-4 gap-x-4">
               <div className="w-[50px] h-[50px] rounded-full flex-shrink-0 flex items-center justify-center border border-secondary text-secondary">

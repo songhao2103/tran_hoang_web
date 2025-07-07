@@ -46,7 +46,7 @@ const Header = () => {
   }, [isMenuOpen, toggleMenuOpen]);
 
   return (
-    <div className="flex items-center justify-between relative px-4 py-2 shadow-md lg:shadow-none">
+    <div className="relative flex items-center justify-between w-full px-1 py-2 shadow-md xl:px-4 lg:shadow-none">
       <Logo />
 
       <MenuProvider>
@@ -62,13 +62,13 @@ const Header = () => {
           {isMenuOpen && (
             <motion.div
               ref={menuRef}
-              className="absolute top-full left-0 z-20 w-full bg-white shadow-lg overflow-hidden lg:hidden"
+              className="absolute left-0 z-20 w-full overflow-hidden bg-white shadow-lg top-full lg:hidden"
               initial="closed"
               animate="open"
               exit="closed"
               variants={menuVariants}
             >
-              <div className="flex flex-col gap-y-1 px-4 py-2">
+              <div className="flex flex-col px-4 py-2 gap-y-1">
                 {MENU_CONFIG.map((menu) => (
                   <MenuHeading key={menu.title} menu={menu} />
                 ))}

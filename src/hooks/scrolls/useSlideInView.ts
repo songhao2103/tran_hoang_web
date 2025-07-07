@@ -12,7 +12,7 @@ interface SlideInViewOptions {
 export function useSlideInView({
   direction = "up",
   triggerOnce = false,
-  distance = 50,
+  distance = 30,
   fromOutside = false,
 }: SlideInViewOptions & { fromOutside?: boolean } = {}) {
   const ref = useRef<HTMLDivElement>(null);

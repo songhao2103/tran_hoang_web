@@ -7,6 +7,7 @@ import Contact from "../pages/contact";
 import News from "../pages/news";
 import PriceList from "../pages/price-list";
 import Services from "../pages/services";
+import NewDetail from "../pages/news/NewDetail";
 
 export const publicRoutes: RouteConfig[] = [
   { path: ROUTE_PATH.HOME, component: HomePage, layout: MainLayout },
@@ -17,6 +18,11 @@ export const publicRoutes: RouteConfig[] = [
   {
     path: PREFIX_ROUTE_PATH.SERVICES + "/:slug",
     component: Services,
+    layout: MainLayout,
+  },
+  {
+    path: ROUTE_PATH.NEW_DETAIL,
+    component: NewDetail,
     layout: MainLayout,
   },
 ];

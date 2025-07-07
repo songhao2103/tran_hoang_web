@@ -25,10 +25,10 @@ const BannerItem: React.FC<IBannerItemProps> = ({ banner }) => {
       <img
         src={banner.imageUrl}
         alt="banner"
-        className="w-full h-full object-cover"
+        className="object-cover w-full h-full"
       />
       <motion.p
-        className="absolute bottom-[250px]  left-[250px] text-white text-[50px] font-bold max-w-[400px]"
+        className="absolute bottom-[200px] left-[50px] xl:bottom-[250px]  xl:left-[250px] !text-white title-h1 font-bold max-w-[400px]"
         initial={{ opacity: 0, y: 200 }}
         animate={
           swiperSlide.isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 200 }
@@ -43,7 +43,7 @@ const BannerItem: React.FC<IBannerItemProps> = ({ banner }) => {
 
 const BannerSlide = () => {
   return (
-    <div className="w-full h-[700px]">
+    <div className="w-full h-[400px] md:h-[550px] xl:h-[700px]">
       <Swiper
         effect="fade"
         fadeEffect={{ crossFade: true }}
@@ -53,7 +53,7 @@ const BannerSlide = () => {
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         navigation
-        className=" overflow-hidden h-full"
+        className="h-full overflow-hidden "
       >
         {bannerList.map((banner, idx) => (
           <SwiperSlide key={idx}>

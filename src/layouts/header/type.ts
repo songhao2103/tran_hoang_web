@@ -3,4 +3,6 @@ export interface HeaderContextType {
   setIsScrolled: (value: boolean) => void;
   isMenuOpen: boolean;
   toggleMenuOpen: () => void;
+  isInputSearchOpen: boolean;
+  toggleInputSearchOpen: () => void;
 }

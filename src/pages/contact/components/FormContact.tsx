@@ -35,7 +35,7 @@ const FormContact = () => {
   };
   return (
     <div className="w-full">
-      <p className="title-h2">Gửi tin nhắn</p>
+      <p className="mb-4 title-h2">Gửi tin nhắn</p>
       <div className="flex flex-col gap-y-4">
         <InputCommon
           placeholder="Nhập họ và tên"

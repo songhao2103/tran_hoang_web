@@ -23,6 +23,7 @@ export interface IServiceOverviewItem {
   description: string;
   icon: IconType;
   backgroundImage: string;
+  path: string;
 }
 
 export interface IWorkflowStep {

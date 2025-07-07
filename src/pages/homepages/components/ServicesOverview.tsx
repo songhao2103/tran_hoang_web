@@ -1,7 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import { useState } from "react";
 import type { IServiceOverviewItem } from "../homepage.type";
-import { PREFIX_ROUTE_PATH } from "../../../routes/routePath";
 import SlideInView from "../../../components/scrolls/SlideInView";
 import { SERVICES_OVERVIEW_DATA } from "../data";
 
@@ -32,7 +31,8 @@ export const ServiceOverviewItem = ({
   serviceItem: IServiceOverviewItem;
   index: number;
 }) => {
-  const [active, setActive] = useState(false);
+  const windowWidth = window.innerWidth;
+  const [active, setActive] = useState(windowWidth > 1024 ? false : true);
   const Icon = serviceItem.icon;
 
   return (
@@ -43,7 +43,7 @@ export const ServiceOverviewItem = ({
       delay={index * 0.1}
     >
       <motion.div
-        className="relative w-full h-64 overflow-hidden cursor-pointer rounded-2xl"
+        className="relative w-full h-64 overflow-hidden rounded-2xl"
         style={{
           backgroundImage: `url(${serviceItem.backgroundImage})`,
           backgroundPosition: "center",
@@ -57,7 +57,7 @@ export const ServiceOverviewItem = ({
         {/* overlay đen */}
         <motion.div
           variants={layoutVariants}
-          className="absolute inset-0 bg-black z-20"
+          className="absolute inset-0 z-10 bg-black"
         />
 
         {/* background image zoom */}
@@ -68,7 +68,7 @@ export const ServiceOverviewItem = ({
         />
 
         {/* tiêu đề */}
-        <p className="relative top-[30px] left-[30px] title-h4 text-white max-w-[60%] z-30">
+        <p className="relative top-[30px] left-[30px] title-h4 !text-light max-w-[60%] z-40">
           {serviceItem.title}
         </p>
 
@@ -88,7 +88,10 @@ export const ServiceOverviewItem = ({
           <p className="text-xs max-w-[60%] text-gray-100">
             {serviceItem.description}
           </p>
-          <a href={PREFIX_ROUTE_PATH.SERVICES} className="text-xs underline">
+          <a
+            href={serviceItem.path}
+            className="mt-2 text-xs underline cursor-pointer"
+          >
             Chi tiết
           </a>
         </motion.div>

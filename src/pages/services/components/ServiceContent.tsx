@@ -16,7 +16,7 @@ const ServiceContent: React.FC<IServiceContentProps> = ({ activeService }) => {
   if (!data) return null;
   return (
     <div className="w-full">
-      <SlideInView direction="up" delay={0.2} className="w-full" fromOutside>
+      <SlideInView direction="up" className="w-full">
         <img
           src={data.image}
           alt=""
@@ -26,12 +26,12 @@ const ServiceContent: React.FC<IServiceContentProps> = ({ activeService }) => {
 
       <div className="mt-10">
         <div>
-          <p className="title-h3 mb-3">{activeService.title}</p>
+          <p className="mb-3 title-h3">{activeService.title}</p>
           <p>{data.description}</p>
         </div>
 
         <div className="mt-10">
-          <p className="title-h4 mb-6">{data.titlePart}</p>
+          <p className="mb-6 title-h4">{data.titlePart}</p>
           <div className="flex flex-col gap-y-6">
             {data.parts.map((part: IPartsItem) => (
               <div>

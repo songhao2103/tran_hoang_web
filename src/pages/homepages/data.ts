@@ -16,6 +16,7 @@ import { LuPackageSearch } from "react-icons/lu";
 import { PiFireTruck } from "react-icons/pi";
 import { PiShippingContainerDuotone } from "react-icons/pi";
 import { RiSecurePaymentLine } from "react-icons/ri";
+import { ROUTE_PATH } from "../../routes/routePath";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   Thông tin về chúng tôi
@@ -65,6 +66,7 @@ export const SERVICES_OVERVIEW_DATA: IServiceOverviewItem[] = [
     description:
       "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
     backgroundImage: bgcImage,
+    path: ROUTE_PATH.FIND_SOURCE_GOODS,
   },
   {
     icon: PiFireTruck,
@@ -72,6 +74,7 @@ export const SERVICES_OVERVIEW_DATA: IServiceOverviewItem[] = [
     description:
       "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
     backgroundImage: bgcImage,
+    path: ROUTE_PATH.OFFICIAL_TRANSPORTATION,
   },
   {
     icon: PiShippingContainerDuotone,
@@ -79,6 +82,7 @@ export const SERVICES_OVERVIEW_DATA: IServiceOverviewItem[] = [
     description:
       "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
     backgroundImage: bgcImage,
+    path: ROUTE_PATH.COMBINE_CONTAINERS,
   },
   {
     icon: RiSecurePaymentLine,
@@ -86,6 +90,7 @@ export const SERVICES_OVERVIEW_DATA: IServiceOverviewItem[] = [
     description:
       "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
     backgroundImage: bgcImage,
+    path: ROUTE_PATH.PAY_ON_BEHALF,
   },
 ];
 
