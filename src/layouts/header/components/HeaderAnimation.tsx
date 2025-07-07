@@ -68,7 +68,7 @@ const HeaderAnimation = () => {
         initial="default"
         animate={controls}
         layout // 👈 Animate mọi thay đổi chiều cao
-        className="max-w-[1820px] mx-auto h-auto flex flex-col bg-dark"
+        className="h-auto flex flex-col bg-dark w-screen"
       >
         {/* Input search */}
         <motion.div
@@ -87,7 +87,7 @@ const HeaderAnimation = () => {
               transition: { duration: 0.3, ease: "easeInOut" },
             },
           }}
-          className="w-full overflow-hidden"
+          className="w-full overflow-hidden max-w-[1820px] mx-auto"
         >
           <div className="relative flex items-center justify-center w-full h-[50px] bg-secondary">
             <input
@@ -103,7 +103,6 @@ const HeaderAnimation = () => {
             <GrSearch className="absolute left-8 top-[50%] -translate-y-1/2 text-light" />
           </div>
         </motion.div>
-
         {/* Header chính */}
         <Header />
       </motion.div>

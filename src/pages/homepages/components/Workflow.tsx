@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import type { IWorkflowStep } from "../homepage.type";
 import { WORKFLOW_STEPS } from "../data";
 import SlideInView from "../../../components/scrolls/SlideInView";

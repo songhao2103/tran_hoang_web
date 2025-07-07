@@ -1,4 +1,3 @@
-import React from "react";
 import AboutUs from "./components/AboutUs";
 import TranHoangInfo from "./components/TranHoangInfo";
 import LayoutContent from "../../layouts/LayoutContent";

@@ -1,4 +1,3 @@
-import React from "react";
 import world from "../../../assets/icons/world-about-us.png";
 import car from "../../../assets/icons/car-about-us.png";
 

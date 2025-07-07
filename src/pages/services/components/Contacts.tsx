@@ -1,4 +1,3 @@
-import React from "react";
 import { FiPhone } from "react-icons/fi";
 import { MdLocationOn, MdOutlineMail } from "react-icons/md";
 

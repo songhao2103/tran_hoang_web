@@ -1,4 +1,3 @@
-import React from "react";
 import FormContact from "./components/FormContact";
 import LayoutContent from "../../layouts/LayoutContent";
 import Contactcontent from "./components/Contactcontent";

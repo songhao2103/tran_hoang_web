@@ -16,7 +16,7 @@ const Breadcrumb = () => {
     let menuList = MENU_CONFIG;
     const items: TMenuConfig[] = [];
 
-    pathnames.forEach((segment, index) => {
+    pathnames.forEach((_, index) => {
       const currentPath = pathnames.slice(0, index + 1).join("/");
       const matched = menuList.find(
         (m) => m.path.replace(/^\/+/, "") === currentPath

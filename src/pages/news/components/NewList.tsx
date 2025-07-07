@@ -5,9 +5,6 @@ import { BLOGS_DATA } from "../data";
 import BlogItem from "./BlogCard";
 
 const PAGE_SIZE = 3; // số phần tử mỗi trang
-interface INewListProps {
-  searchKey?: string;
-}
 
 const NewList = () => {
   const [pageIndex, setPageIndex] = useState<number>(1);

@@ -30,7 +30,7 @@ const FloatingActions = () => {
 
   // Xây dựng style conic-gradient: màu xanh lá (ví dụ) cho phần đã scroll, xám nhạt cho phần còn lại
   const bgStyle = {
-    background: `conic-gradient(#f43f5e ${percent}%, #0f313a ${percent}% 100%)`,
+    background: `conic-gradient(#f94735 ${percent}%, #0f313a ${percent}% 100%)`,
   };
 
   return (

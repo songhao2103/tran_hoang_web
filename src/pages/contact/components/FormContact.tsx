@@ -1,4 +1,3 @@
-import React from "react";
 import InputCommon from "../../../components/input/Input";
 import * as Yup from "yup";
 import { useFormik } from "formik";
