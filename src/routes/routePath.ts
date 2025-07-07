@@ -3,6 +3,7 @@ export const PREFIX_ROUTE_PATH = {
 };
 
 export const ROUTE_PATH = {
+  //public
   HOME: "/",
   NOT_FOUND: "*",
   INTRODUCE: "/gioi-thieu",
@@ -15,4 +16,10 @@ export const ROUTE_PATH = {
     PREFIX_ROUTE_PATH.SERVICES + "/van-chuyen-chinh-ngach",
   COMBINE_CONTAINERS: PREFIX_ROUTE_PATH.SERVICES + "/ghep-cotainers",
   PAY_ON_BEHALF: PREFIX_ROUTE_PATH.SERVICES + "/thanh-toan-ho",
+
+  //admin
+  ADMIN: "/admin",
+  ADMIN_AUTH: "/admin/auth",
+  ADMIN_NEWS: "/admin/news",
+  ADMIN_INFORMATION: "/admin/information",
 };

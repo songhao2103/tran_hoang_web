@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import type { InputCommonProps } from "./input.type";
 import { SIZE_INPUT } from "./constance";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const InputCommon: React.FC<InputCommonProps> = ({
   label,
@@ -18,6 +19,9 @@ const InputCommon: React.FC<InputCommonProps> = ({
   rows = 1,
 }) => {
   const padding = SIZE_INPUT[size];
+  const [inputType, setInputType] =
+    useState<React.InputHTMLAttributes<unknown>["type"]>(type);
+
   return (
     <div>
       {label && (
@@ -43,20 +47,31 @@ const InputCommon: React.FC<InputCommonProps> = ({
             rows={rows}
           />
         ) : (
-          <input
-            className="border w-full outline-none hover:border-gray-700 focus:border-blue-500 rounded-[5px] placeholder:font-normal"
-            style={{ padding: `${padding.px}px ${padding.py}px` }}
-            type={type}
-            value={value}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              onChange(e.target.value)
-            }
-            placeholder={placeholder}
-            disabled={disabled}
-            autoFocus={autoFocus}
-            id={id}
-            name=""
-          />
+          <div className="relative">
+            <input
+              className="border w-full outline-none hover:border-gray-700 focus:border-blue-500 rounded-[5px] placeholder:font-normal"
+              style={{ padding: `${padding.px}px ${padding.py}px` }}
+              type={inputType}
+              value={value}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                onChange(e.target.value)
+              }
+              placeholder={placeholder}
+              disabled={disabled}
+              autoFocus={autoFocus}
+              id={id}
+              name=""
+            />
+            {type === "password" && (
+              <div className="absolute right-4 top-[50%] -translate-y-1/2 cursor-pointer">
+                {inputType === "password" ? (
+                  <FaRegEyeSlash onClick={() => setInputType("text")} />
+                ) : (
+                  <FaRegEye onClick={() => setInputType("password")} />
+                )}
+              </div>
+            )}
+          </div>
         )}
       </div>
 
