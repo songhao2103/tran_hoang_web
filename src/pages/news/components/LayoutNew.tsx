@@ -24,8 +24,11 @@ const LayoutNew = ({ children }: { children: ReactNode }) => {
 
           <Card title="BÀI VIẾT GẦN ĐÂY">
             <div className="flex flex-col gap-y-4">
-              {BLOGS_DATA.slice(0, 3).map((blog) => (
-                <div className="flex items-center justify-between w-full gap-x-3">
+              {BLOGS_DATA.slice(0, 3).map((blog, index) => (
+                <div
+                  className="flex items-center justify-between w-full gap-x-3"
+                  key={index}
+                >
                   <img
                     src={blog.mainImage}
                     alt=""

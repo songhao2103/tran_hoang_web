@@ -1,9 +1,9 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { GrSearch } from "react-icons/gr";
+import { RiCloseFill } from "react-icons/ri";
 import Header from "../Header";
 import { useHeader } from "../constance";
-import { RiCloseFill } from "react-icons/ri";
-import { GrSearch } from "react-icons/gr";
 
 const HeaderAnimation = () => {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -37,26 +37,21 @@ const HeaderAnimation = () => {
 
   const variants = {
     default: {
+      y: 0,
       opacity: 1,
-      transition: {
-        opacity: {
-          duration: 0.5,
-          ease: [0.4, 0, 0.2, 1],
-        },
-        y: {
-          duration: 0.5,
-          ease: [0.4, 0, 0.2, 1],
-        },
-      },
       backgroundColor: "var(--color-text-black)",
+      transition: {
+        y: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+        opacity: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+      },
     },
     sticky: {
+      // Slide từ trên xuống:
+      y: ["-100%", "0%"],
       opacity: [0, 1],
-      scaleY: [0.8, 1],
-      y: [-20, 0],
       transition: {
-        duration: 1.2,
-        ease: [0.4, 0, 0.2, 1],
+        y: { duration: 0.8, ease: [0.4, 0, 0.2, 1] },
+        opacity: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
       },
     },
   };
@@ -65,7 +60,7 @@ const HeaderAnimation = () => {
     <div ref={headerRef} className="sticky top-0 z-50 w-full">
       <motion.div
         variants={variants}
-        initial="default"
+        initial={false}
         animate={controls}
         layout // 👈 Animate mọi thay đổi chiều cao
         className="h-auto flex flex-col bg-dark w-screen"
@@ -103,6 +98,7 @@ const HeaderAnimation = () => {
             <GrSearch className="absolute left-8 top-[50%] -translate-y-1/2 text-light" />
           </div>
         </motion.div>
+
         {/* Header chính */}
         <Header />
       </motion.div>
