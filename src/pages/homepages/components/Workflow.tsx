@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import useWindowWidth from "../../../hooks/dom/useWindownWidth";
 import { Navigation, Pagination } from "swiper/modules";
 import SectionTitle from "../../../components/titles/SectionTitle";
+import { SEARCH_DATA_SECTION_ID } from "../../../datas/pathSearchDatas";
 
 const WorkflowItem = ({
   step,
@@ -52,7 +53,10 @@ const Workflow = () => {
   return (
     <div className="mt-[100px]">
       <SlideInView className="" direction="up" triggerOnce>
-        <div className="flex flex-col items-center justify-center">
+        <div
+          className="flex flex-col items-center justify-center"
+          id={SEARCH_DATA_SECTION_ID.workflowHomepage}
+        >
           <SectionTitle title="02_QUY TRÌNH" className="text-center" />
           <p className="text-center title-h1 mb-[10px]">Quy trình thực hiện</p>
         </div>

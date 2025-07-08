@@ -6,6 +6,7 @@ import type { IFeedbackItem } from "../homepage.type";
 import "../style/feedback.css";
 import SlideInView from "../../../components/scrolls/SlideInView";
 import SectionTitle from "../../../components/titles/SectionTitle";
+import { SEARCH_DATA_SECTION_ID } from "../../../datas/pathSearchDatas";
 
 const FeedbackItem = ({ feedback }: { feedback: IFeedbackItem }) => {
   return (
@@ -33,7 +34,10 @@ export const Feedbacks = () => {
   return (
     <LayoutContent>
       <SlideInView direction="up" triggerOnce className="w-full" delay={0.3}>
-        <div className="flex flex-col xl:flex-row mt-[100px] justify-between">
+        <div
+          className="flex flex-col xl:flex-row mt-[100px] justify-between"
+          id={SEARCH_DATA_SECTION_ID.feedbackHomePage}
+        >
           <div className="flex flex-col w-full xl:w-[40%]">
             <SectionTitle title="03_KHÁCH HÀNG NÓI VỀ CHÚNG TÔI" />
             <p className="title-h1 text-center w-full xl:text-start mb-[60px] xl:mb-0 ">

@@ -4,11 +4,15 @@ import transport from "../../../assets/icons/transport-about-us.png";
 import image from "../../../assets/images/introduces/introduce_homepage.jpg";
 import MotionCounter from "../../../components/scrolls/MotionCounter";
 import SlideInView from "../../../components/scrolls/SlideInView";
+import { SEARCH_DATA_SECTION_ID } from "../../../datas/pathSearchDatas";
 import LayoutContent from "../../../layouts/LayoutContent";
 
 const StatisticalIntroduce = () => {
   return (
-    <div className="mt-[100px] relative py-[70px]">
+    <div
+      className="mt-[100px] relative py-[70px]"
+      id={SEARCH_DATA_SECTION_ID.statisticsIntroduce}
+    >
       <img
         src={image}
         alt=""

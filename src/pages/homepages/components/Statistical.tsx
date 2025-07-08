@@ -5,13 +5,17 @@ import { LuPackage } from "react-icons/lu";
 import MotionCounter from "../../../components/scrolls/MotionCounter";
 import SlideInView from "../../../components/scrolls/SlideInView";
 import SectionTitle from "../../../components/titles/SectionTitle";
+import { SEARCH_DATA_SECTION_ID } from "../../../datas/pathSearchDatas";
 
 const Statistical = () => {
   const currentYear = new Date().getFullYear();
   return (
     <LayoutContent>
       <SlideInView>
-        <div className="mt-[150px]">
+        <div
+          className="mt-[150px]"
+          id={SEARCH_DATA_SECTION_ID.statisticsHomepage}
+        >
           <div>
             <SectionTitle title="04_SỐ LIỆU" className="text-center" />
             <p className="text-center title-h1">

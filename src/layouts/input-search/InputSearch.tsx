@@ -1,17 +1,19 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, type RefObject } from "react";
 import { GrSearch } from "react-icons/gr";
 import { RiCloseFill } from "react-icons/ri";
-import { SEARCH_DATAS } from "../../datas/searchDatas";
-import TruncateTextWithPopup from "../../components/handle-text/TruncateTextWithPopup";
 import { useNavigate } from "react-router-dom";
+import TruncateTextWithPopup from "../../components/handle-text/TruncateTextWithPopup";
 import type { ISearchDatas } from "../../datas/data.type";
+import { SEARCH_DATAS } from "../../datas/searchDatas";
 
 interface IInputSearchProps {
   toggleInputSearchOpen: () => void;
+  inputRef: RefObject<HTMLInputElement | null>;
 }
 
 const InputSearch: React.FC<IInputSearchProps> = ({
   toggleInputSearchOpen,
+  inputRef,
 }) => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState<string>("");
@@ -25,8 +27,30 @@ const InputSearch: React.FC<IInputSearchProps> = ({
     return () => clearTimeout(handler);
   }, [inputValue]);
 
-  const resultList = useMemo(() => {
-    return SEARCH_DATAS;
+  const resultList = useMemo<ISearchDatas[]>(() => {
+    const key = searchValue.toLocaleLowerCase().trim();
+
+    // 1. Lọc theo title
+    const titleMatches = SEARCH_DATAS.filter((item) =>
+      item.title.toLocaleLowerCase().includes(key)
+    );
+
+    // 2. Lọc theo content (loại bỏ đã match title)
+    const contentMatches = SEARCH_DATAS.filter(
+      (item) =>
+        !titleMatches.includes(item) &&
+        String(item.content).toLocaleLowerCase().includes(key)
+    );
+
+    // 3. Lọc theo description (loại bỏ đã match title & content)
+    const descMatches = SEARCH_DATAS.filter(
+      (item) =>
+        !titleMatches.includes(item) &&
+        !contentMatches.includes(item) &&
+        item.description?.toLocaleLowerCase().includes(key)
+    );
+
+    return [...titleMatches, ...contentMatches, ...descMatches];
   }, [searchValue, SEARCH_DATAS]);
 
   const handleClose = () => {
@@ -36,13 +60,14 @@ const InputSearch: React.FC<IInputSearchProps> = ({
   };
 
   const handleNavigate = (item: ISearchDatas) => {
-    debugger;
     navigate(item.path, { state: { hash: item.sectionId } });
+    handleClose();
   };
 
   return (
     <div className="relative flex items-center justify-center w-full h-[50px] bg-secondary">
       <input
+        ref={inputRef}
         type="text"
         autoFocus
         value={inputValue}
@@ -67,11 +92,11 @@ const InputSearch: React.FC<IInputSearchProps> = ({
           )}
 
           {resultList.length !== 0 && (
-            <div className="h-[60vh] max-h-[350px] overflow-y-auto">
+            <div className="max-h-[350px] overflow-y-auto pb-10">
               <div className="grid items-start grid-cols-1 lg:grid-cols-2 gap-y-4 lg:gap-y-6 lg:gap-x-12">
-                {resultList.map((item, i) => (
+                {resultList.map((item: ISearchDatas) => (
                   <div
-                    key={i}
+                    key={item.id}
                     className="flex items-start gap-4 group"
                     onClick={() => handleNavigate(item)}
                   >

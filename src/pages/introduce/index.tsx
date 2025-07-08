@@ -5,6 +5,7 @@ import Workflow from "../homepages/components/Workflow";
 import CompanyHistory from "./components/CompanyHistory";
 import StatisticalIntroduce from "./components/StatisticalIntroduce";
 import SlideInView from "../../components/scrolls/SlideInView";
+import { SEARCH_DATA_SECTION_ID } from "../../datas/pathSearchDatas";
 
 const Introduce = () => {
   return (
@@ -19,7 +20,7 @@ const Introduce = () => {
           </SlideInView>
         </div>
       </LayoutContent>
-      <div className="mt-[100px]">
+      <div className="mt-[100px]" id={SEARCH_DATA_SECTION_ID.workflowIntroduce}>
         <Workflow />
       </div>
       <CompanyHistory />

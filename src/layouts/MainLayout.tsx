@@ -12,11 +12,15 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const hash = location.state?.hash;
+    if (!hash) return;
 
-    debugger;
-    if (hash) {
-      const el = document.querySelector("#" + hash);
-      el?.scrollIntoView({ behavior: "smooth" });
+    // tìm element
+    const el = document.querySelector("#" + hash);
+    if (el) {
+      // vị trí thực tế so với top của page
+      const topPos = el.getBoundingClientRect().top + window.scrollY;
+      // scroll tới trên element 100px
+      window.scrollTo({ top: topPos - 200, behavior: "smooth" });
     }
   }, [location]);
 

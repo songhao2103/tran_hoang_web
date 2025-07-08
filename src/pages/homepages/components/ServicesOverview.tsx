@@ -3,6 +3,7 @@ import { useState } from "react";
 import type { IServiceOverviewItem } from "../homepage.type";
 import SlideInView from "../../../components/scrolls/SlideInView";
 import { SERVICES_OVERVIEW_DATA } from "../data";
+import { SEARCH_DATA_SECTION_ID } from "../../../datas/pathSearchDatas";
 
 const backgroundVariants: Variants = {
   rest: { scale: 1 },
@@ -48,6 +49,7 @@ export const ServiceOverviewItem = ({
           backgroundImage: `url(${serviceItem.backgroundImage})`,
           backgroundPosition: "center",
         }}
+        id={SEARCH_DATA_SECTION_ID.serviciesHomepage}
         // sử dụng cùng 2 hành vi hover + click
         onHoverStart={() => setActive(true)}
         onHoverEnd={() => setActive(false)}
