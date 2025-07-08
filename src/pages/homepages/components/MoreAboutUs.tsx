@@ -6,12 +6,16 @@ import ButtonCustom from "../../../components/button/ButtonCustom";
 import SlideInView from "../../../components/scrolls/SlideInView";
 import useWindowWidth from "../../../hooks/dom/useWindownWidth";
 import SectionTitle from "../../../components/titles/SectionTitle";
+import { PATH_SEARCH_DATA } from "../../../datas/pathSearchDatas";
 
 const MoreAboutUs = () => {
   const windowWidth = useWindowWidth();
   return (
     <LayoutContent>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-x-10 mt-[100px]">
+      <div
+        className="flex flex-col md:flex-row items-center justify-center gap-x-10 mt-[100px]"
+        id={PATH_SEARCH_DATA.informationHomepage}
+      >
         {/* Nội dung trượt lên */}
         <SlideInView
           direction="up"

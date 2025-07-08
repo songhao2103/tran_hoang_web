@@ -11,7 +11,8 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="relative flex flex-col min-h-screen">
+      <div className="absolute inset-0 -z-50 bg-light"></div>
       <HeaderProvider>
         <HeaderAnimation />
       </HeaderProvider>

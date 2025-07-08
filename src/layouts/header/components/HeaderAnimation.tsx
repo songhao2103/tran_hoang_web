@@ -4,6 +4,7 @@ import { GrSearch } from "react-icons/gr";
 import { RiCloseFill } from "react-icons/ri";
 import Header from "../Header";
 import { useHeader } from "../constance";
+import InputSearch from "../../input-search/InputSearch";
 
 const HeaderAnimation = () => {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -63,7 +64,7 @@ const HeaderAnimation = () => {
         initial={false}
         animate={controls}
         layout // 👈 Animate mọi thay đổi chiều cao
-        className="h-auto flex flex-col bg-dark w-screen"
+        className="flex flex-col w-screen h-auto bg-dark"
       >
         {/* Input search */}
         <motion.div
@@ -82,9 +83,9 @@ const HeaderAnimation = () => {
               transition: { duration: 0.3, ease: "easeInOut" },
             },
           }}
-          className="w-full overflow-hidden max-w-[1820px] mx-auto"
+          className="w-full  max-w-[1820px] mx-auto"
         >
-          <div className="relative flex items-center justify-center w-full h-[50px] bg-secondary">
+          {/* <div className="relative flex items-center justify-center w-full h-[50px] bg-secondary">
             <input
               type="text"
               autoFocus
@@ -96,7 +97,8 @@ const HeaderAnimation = () => {
               className="absolute ml-2 text-xl cursor-pointer right-4 sm:right-8 text-light"
             />
             <GrSearch className="absolute left-8 top-[50%] -translate-y-1/2 text-light" />
-          </div>
+          </div> */}
+          <InputSearch toggleInputSearchOpen={toggleInputSearchOpen} />
         </motion.div>
 
         {/* Header chính */}
