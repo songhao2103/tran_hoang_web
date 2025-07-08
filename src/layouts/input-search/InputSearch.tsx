@@ -3,7 +3,8 @@ import { GrSearch } from "react-icons/gr";
 import { RiCloseFill } from "react-icons/ri";
 import { SEARCH_DATAS } from "../../datas/searchDatas";
 import TruncateTextWithPopup from "../../components/handle-text/TruncateTextWithPopup";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import type { ISearchDatas } from "../../datas/data.type";
 
 interface IInputSearchProps {
   toggleInputSearchOpen: () => void;
@@ -12,6 +13,7 @@ interface IInputSearchProps {
 const InputSearch: React.FC<IInputSearchProps> = ({
   toggleInputSearchOpen,
 }) => {
+  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState<string>("");
   const [searchValue, setSearchValue] = useState<string>("");
 
@@ -31,6 +33,11 @@ const InputSearch: React.FC<IInputSearchProps> = ({
     setInputValue("");
     setSearchValue("");
     toggleInputSearchOpen();
+  };
+
+  const handleNavigate = (item: ISearchDatas) => {
+    debugger;
+    navigate(item.path, { state: { hash: item.sectionId } });
   };
 
   return (
@@ -63,10 +70,10 @@ const InputSearch: React.FC<IInputSearchProps> = ({
             <div className="h-[60vh] max-h-[350px] overflow-y-auto">
               <div className="grid items-start grid-cols-1 lg:grid-cols-2 gap-y-4 lg:gap-y-6 lg:gap-x-12">
                 {resultList.map((item, i) => (
-                  <Link
-                    to={item.path}
+                  <div
                     key={i}
                     className="flex items-start gap-4 group"
+                    onClick={() => handleNavigate(item)}
                   >
                     {item.image && (
                       <img
@@ -83,7 +90,7 @@ const InputSearch: React.FC<IInputSearchProps> = ({
                         {item.content}
                       </TruncateTextWithPopup>
                     </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>

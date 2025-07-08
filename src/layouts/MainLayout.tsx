@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 import Breadcrumb from "../components/breadcrumb/Breadcrumb";
 import ScrollToTop from "../components/scrolls/ScrollToTop";
@@ -9,6 +9,16 @@ import FloatingActions from "./utils/FloatingActions";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.state?.hash;
+
+    debugger;
+    if (hash) {
+      const el = document.querySelector("#" + hash);
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
 
   return (
     <div className="relative flex flex-col min-h-screen">
