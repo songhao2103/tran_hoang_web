@@ -8,6 +8,7 @@ import useWindowWidth from "../../../hooks/dom/useWindownWidth";
 import { Navigation, Pagination } from "swiper/modules";
 import SectionTitle from "../../../components/titles/SectionTitle";
 import { SEARCH_DATA_SECTION_ID } from "../../../datas/pathSearchDatas";
+import BackgroundLayoutSection from "../../../layouts/BackgroundLayoutSection";
 
 const WorkflowItem = ({
   step,
@@ -51,7 +52,7 @@ const Workflow = () => {
   }, [windowWidth]);
 
   return (
-    <div className="mt-[100px]">
+    <BackgroundLayoutSection>
       <SlideInView className="" direction="up" triggerOnce>
         <div
           className="flex flex-col items-center justify-center"
@@ -99,7 +100,7 @@ const Workflow = () => {
           ))}
         </div>
       )}
-    </div>
+    </BackgroundLayoutSection>
   );
 };
 

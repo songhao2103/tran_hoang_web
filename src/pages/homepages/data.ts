@@ -24,7 +24,7 @@ import { ROUTE_PATH } from "../../routes/routePath";
 export const INTRODUCE_SECTIONS_DATA: IIntroduceSectionItem[] = [
   {
     icon: PiWarehouse,
-    title: "Kho bãi chính chủ Trung Việt",
+    title: "Kho bãi chính chủ Trung-Việt",
     description:
       "Sở hữu kho hàng tại Trung Quốc và Việt Nam hoàn toàn chủ động nguồn hàng, xử lý nhanh chóng",
   },

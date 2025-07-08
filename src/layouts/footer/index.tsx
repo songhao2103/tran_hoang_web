@@ -3,7 +3,7 @@ import { FaFacebookF, FaFacebookMessenger } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-black p-10 flex justify-center w-full mt-[50px] md:mt-[100px] xl:mt-[150px] flex-col lg:flex-row">
+    <div className="bg-dark p-10 flex justify-center w-full mt-[50px] md:mt-[100px] xl:mt-[150px] flex-col lg:flex-row">
       <div className="flex max-w-[1820px] gap-x-[100px] flex-col lg:flex-row">
         <div className="flex flex-col gap-y-6">
           <Logo />

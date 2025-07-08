@@ -8,6 +8,7 @@ import useWindowWidth from "../../../hooks/dom/useWindownWidth";
 import FadeInView from "../../../components/scrolls/FadeInView";
 import TruncateTextWithPopup from "../../../components/handle-text/TruncateTextWithPopup";
 import { SEARCH_DATA_SECTION_ID } from "../../../datas/pathSearchDatas";
+import BackgroundLayoutSection from "../../../layouts/BackgroundLayoutSection";
 
 const CompanyHistory = () => {
   const windowWidth = useWindowWidth();
@@ -20,29 +21,31 @@ const CompanyHistory = () => {
 
   return (
     <FadeInView delay={0.6} duration={2} className="w-full h-full">
-      <div
-        className="relative w-full py-10 mt-10 bg-white"
-        id={SEARCH_DATA_SECTION_ID.companyHistoryIntroduce}
-      >
-        <p className="mb-10 text-center title-h1">Lịch sử công ty</p>
-        <div className="relative w-full bg-white">
-          <Swiper
-            slidesPerView={numberOfSlide}
-            grabCursor={true}
-            modules={[Pagination]}
-            className="flex items-center w-full"
-          >
-            {COMPANY_HISTORIES_DATA.map(
-              (history: ICompanyHistoryItem, index: number) => (
-                <SwiperSlide key={index}>
-                  <HistoryCard history={history} index={index} />
-                </SwiperSlide>
-              )
-            )}
-          </Swiper>
-          <div className="h-1 w-full bg-gray-400 absolute top-[50%] -translate-y-1/2"></div>
+      <BackgroundLayoutSection>
+        <div
+          className="relative w-full py-10 mt-10 bg-white"
+          id={SEARCH_DATA_SECTION_ID.companyHistoryIntroduce}
+        >
+          <p className="mb-10 text-center title-h1">Lịch sử công ty</p>
+          <div className="relative w-full bg-white">
+            <Swiper
+              slidesPerView={numberOfSlide}
+              grabCursor={true}
+              modules={[Pagination]}
+              className="flex items-center w-full"
+            >
+              {COMPANY_HISTORIES_DATA.map(
+                (history: ICompanyHistoryItem, index: number) => (
+                  <SwiperSlide key={index}>
+                    <HistoryCard history={history} index={index} />
+                  </SwiperSlide>
+                )
+              )}
+            </Swiper>
+            <div className="h-1 w-full bg-gray-400 absolute top-[50%] -translate-y-1/2"></div>
+          </div>
         </div>
-      </div>
+      </BackgroundLayoutSection>
     </FadeInView>
   );
 };

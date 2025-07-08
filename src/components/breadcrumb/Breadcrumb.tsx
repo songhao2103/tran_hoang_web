@@ -37,7 +37,7 @@ const Breadcrumb = () => {
   }, [location.pathname]);
 
   return (
-    <nav className="text-sm text-gray-500 relative mb-[100px]">
+    <nav className="text-sm text-gray-500 relative">
       <div className="inset-0 absolute h-[300px] -z-0">
         <img
           src={imageBreadcrumb}

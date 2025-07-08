@@ -26,7 +26,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="relative flex flex-col min-h-screen">
-      <div className="absolute inset-0 -z-50 bg-light"></div>
+      <div className="absolute inset-0 -z-50 bg-[#fafafa]"></div>
       <HeaderProvider>
         <HeaderAnimation />
       </HeaderProvider>
