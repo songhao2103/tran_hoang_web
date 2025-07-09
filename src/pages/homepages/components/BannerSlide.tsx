@@ -3,7 +3,7 @@ import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
 import { motion } from "framer-motion";
 import "../style/banner.css";
 
-import banner1 from "../../../assets/images/banners/banner1.jpg";
+import banner1 from "../../../assets/images/banners/Bảng vẽ 1.png";
 import banner2 from "../../../assets/images/banners/banner2.png";
 import banner3 from "../../../assets/images/banners/banner3.jpg";
 import type { IBannerItem } from "../homepage.type";

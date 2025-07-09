@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 import Breadcrumb from "../components/breadcrumb/Breadcrumb";
 import ScrollToTop from "../components/scrolls/ScrollToTop";
@@ -10,8 +10,23 @@ import FloatingActions from "./utils/FloatingActions";
 const MainLayout = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
 
+  useEffect(() => {
+    const hash = location.state?.hash;
+    if (!hash) return;
+
+    // tìm element
+    const el = document.querySelector("#" + hash);
+    if (el) {
+      // vị trí thực tế so với top của page
+      const topPos = el.getBoundingClientRect().top + window.scrollY;
+      // scroll tới trên element 100px
+      window.scrollTo({ top: topPos - 200, behavior: "smooth" });
+    }
+  }, [location]);
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="relative flex flex-col min-h-screen">
+      <div className="absolute inset-0 -z-50 bg-[#fafafa]"></div>
       <HeaderProvider>
         <HeaderAnimation />
       </HeaderProvider>

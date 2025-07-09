@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
-import LayoutContent from "../../layouts/LayoutContent";
+import BackgroundLayoutSection from "../../layouts/BackgroundLayoutSection";
 import { MENU_CONFIG } from "../../layouts/menu/menu.config";
 import type { TMenuConfig } from "../../layouts/menu/type";
 import { PREFIX_ROUTE_PATH } from "../../routes/routePath";
+import Contacts from "./components/Contacts";
 import ServiceContent from "./components/ServiceContent";
 import SideBar from "./components/SideBarServices";
-import Contacts from "./components/Contacts";
 
 const Services = () => {
   const location = useLocation();
@@ -32,8 +32,8 @@ const Services = () => {
   }, [location]);
 
   return (
-    <LayoutContent>
-      <div className="flex gap-x-10 flex-col-reverse xl:flex-row">
+    <BackgroundLayoutSection>
+      <div className="flex gap-x-10 flex-col-reverse xl:flex-row px-2 lg:px-6 xl:px-10">
         {activeService && (
           <div className="flex flex-col gap-y-10 md:flex-row md:gap-x-6 mt-10 xl:mt-0 xl:flex-col xl:gap-y-10">
             <SideBar activeService={activeService} services={services} />
@@ -47,7 +47,7 @@ const Services = () => {
           </div>
         )}
       </div>
-    </LayoutContent>
+    </BackgroundLayoutSection>
   );
 };
 

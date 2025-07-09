@@ -3,6 +3,8 @@ import { useState } from "react";
 import type { IServiceOverviewItem } from "../homepage.type";
 import SlideInView from "../../../components/scrolls/SlideInView";
 import { SERVICES_OVERVIEW_DATA } from "../data";
+import { SEARCH_DATA_SECTION_ID } from "../../../datas/pathSearchDatas";
+import BackgroundLayoutSection from "../../../layouts/BackgroundLayoutSection";
 
 const backgroundVariants: Variants = {
   rest: { scale: 1 },
@@ -48,6 +50,7 @@ export const ServiceOverviewItem = ({
           backgroundImage: `url(${serviceItem.backgroundImage})`,
           backgroundPosition: "center",
         }}
+        id={SEARCH_DATA_SECTION_ID.serviciesHomepage}
         // sử dụng cùng 2 hành vi hover + click
         onHoverStart={() => setActive(true)}
         onHoverEnd={() => setActive(false)}
@@ -102,17 +105,19 @@ export const ServiceOverviewItem = ({
 
 const ServicesOverview = () => {
   return (
-    <div className="w-full mt-[100px]">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-6">
-        {SERVICES_OVERVIEW_DATA.map((serviceItem, index) => (
-          <ServiceOverviewItem
-            key={index}
-            serviceItem={serviceItem}
-            index={index}
-          />
-        ))}
+    <BackgroundLayoutSection>
+      <div className="w-full ">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-6">
+          {SERVICES_OVERVIEW_DATA.map((serviceItem, index) => (
+            <ServiceOverviewItem
+              key={index}
+              serviceItem={serviceItem}
+              index={index}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </BackgroundLayoutSection>
   );
 };
 

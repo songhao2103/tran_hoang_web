@@ -37,8 +37,8 @@ const Breadcrumb = () => {
   }, [location.pathname]);
 
   return (
-    <nav className="text-sm text-gray-500 relative mb-[100px]">
-      <div className="inset-0 absolute h-[300px] -z-30">
+    <nav className="text-sm text-gray-500 relative">
+      <div className="inset-0 absolute h-[300px] -z-0">
         <img
           src={imageBreadcrumb}
           alt=""
@@ -50,7 +50,7 @@ const Breadcrumb = () => {
           <div className="flex flex-col gap-y-4 absolute lg:bottom-[50px] lg:left-[70px] bottom-[50px] left-[20px] ">
             {namePage && <p className="title-h1 !text-gray-100">{namePage}</p>}
             <div className="flex items-center gap-x-2 ">
-              <Link to={"/"} className="text-gray-400 font-bold text-lg">
+              <Link to={"/"} className="text-lg font-bold text-gray-400">
                 Trang chủ
               </Link>
               <ul className="flex items-center gap-1">
@@ -60,16 +60,16 @@ const Breadcrumb = () => {
                   if (menu.children) return null;
 
                   return (
-                    <li key={index} className="items-center gap-1 flex gap-x-2">
+                    <li key={index} className="flex items-center gap-1 gap-x-2">
                       <span className="text-secondary">-</span>
                       {isLast ? (
-                        <span className="text-white font-semibold capitalize text-lg">
+                        <span className="text-lg font-semibold text-white capitalize">
                           {menu.title}
                         </span>
                       ) : (
                         <Link
                           to={routeTo}
-                          className="text-gray-400 hover:underline capitalize text-lg"
+                          className="text-lg text-gray-400 capitalize hover:underline"
                         >
                           {menu.title}
                         </Link>

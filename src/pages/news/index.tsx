@@ -1,11 +1,14 @@
+import BackgroundLayoutSection from "../../layouts/BackgroundLayoutSection";
 import LayoutNew from "./components/LayoutNew";
 import NewList from "./components/NewList";
 
 const News = () => {
   return (
-    <LayoutNew>
-      <NewList />
-    </LayoutNew>
+    <BackgroundLayoutSection>
+      <LayoutNew>
+        <NewList />
+      </LayoutNew>
+    </BackgroundLayoutSection>
   );
 };
 
