@@ -60,7 +60,15 @@ const InputSearch: React.FC<IInputSearchProps> = ({
   };
 
   const handleNavigate = (item: ISearchDatas) => {
-    navigate(item.path, { state: { hash: item.sectionId } });
+    debugger;
+    console.log(location.pathname);
+
+    navigate(item.path, {
+      state: {
+        hash: item.sectionId,
+        isFormOtherPage: location.pathname !== item.path,
+      },
+    });
     handleClose();
   };
 

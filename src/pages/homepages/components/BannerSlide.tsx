@@ -1,11 +1,10 @@
-import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
-import { motion } from "framer-motion";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "../style/banner.css";
 
 import banner1 from "../../../assets/images/banners/Bảng vẽ 1.png";
-import banner2 from "../../../assets/images/banners/banner2.png";
-import banner3 from "../../../assets/images/banners/banner3.jpg";
+import banner2 from "../../../assets/images/banners/Bảng vẽ 1 sao chép.png";
+import banner3 from "../../../assets/images/banners/Bảng vẽ 1 sao chép copy.png";
 import type { IBannerItem } from "../homepage.type";
 
 const bannerList: IBannerItem[] = [
@@ -18,7 +17,7 @@ interface IBannerItemProps {
   banner: IBannerItem;
 }
 const BannerItem: React.FC<IBannerItemProps> = ({ banner }) => {
-  const swiperSlide = useSwiperSlide(); // biết slide này có active hay không
+  // const swiperSlide = useSwiperSlide(); // biết slide này có active hay không
 
   return (
     <div className="relative w-full h-full">
@@ -27,7 +26,7 @@ const BannerItem: React.FC<IBannerItemProps> = ({ banner }) => {
         alt="banner"
         className="object-cover w-full h-full"
       />
-      <motion.p
+      {/* <motion.p
         className="absolute bottom-[200px] left-[50px] xl:bottom-[250px]  xl:left-[250px] !text-white title-h1 font-bold max-w-[400px]"
         initial={{ opacity: 0, y: 200 }}
         animate={
@@ -36,14 +35,14 @@ const BannerItem: React.FC<IBannerItemProps> = ({ banner }) => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {banner.title}
-      </motion.p>
+      </motion.p> */}
     </div>
   );
 };
 
 const BannerSlide = () => {
   return (
-    <div className="w-full h-[400px] md:h-[550px] xl:h-[700px]">
+    <div className="w-full h-[52vw] max-h-[947px]">
       <Swiper
         effect="fade"
         fadeEffect={{ crossFade: true }}
