@@ -6,8 +6,7 @@ const Footer = () => {
     <div className="bg-dark p-10 flex justify-center w-full mt-[50px] md:mt-[100px] xl:mt-[150px] flex-col lg:flex-row">
       <div className="flex max-w-[1820px] gap-x-[100px] flex-col lg:flex-row">
         <div className="flex flex-col gap-y-6">
-          <Logo />
-          <p className="title-h4 !text-white">Trần Hoàng Logistics</p>
+          <Logo className="w-[100px] h-[100px]" />
         </div>
         <div className="flex flex-col gap-y-4">
           <p className="title-h5 !text-white">Thông tin liên hệ</p>

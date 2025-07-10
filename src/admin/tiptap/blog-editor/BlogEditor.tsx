@@ -7,6 +7,8 @@ import { Color } from "../extentions/Colors";
 import TextStyle from "@tiptap/extension-text-style";
 import { FontSize } from "../extentions/FontSize";
 import { Image } from "../extentions/Image";
+import { useEffect } from "react";
+import { ResizableImage } from "../extentions/ResizableImage";
 // import FontFamily from "@tiptap/extension-font-family";
 // import Image from "@tiptap/extension-image";
 
@@ -19,6 +21,7 @@ const FullTiptapEditor = () => {
       Underline,
       TextStyle,
       Color,
+      ResizableImage,
       //   FontFamily,
       FontSize,
       Image,
@@ -26,7 +29,77 @@ const FullTiptapEditor = () => {
     content: "<p>Chào mừng đến với Tiptap Editor! 😎</p>",
   });
 
-  const handleImageUpload = () => {};
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file || !editor) return;
+
+    const tempUrl = URL.createObjectURL(file);
+
+    editor.chain().focus().setImage({ src: tempUrl, alt: file.name }).run();
+  };
+  useEffect(() => {
+    if (!editor) return;
+    const editorEl = editor.view.dom as HTMLElement;
+
+    let isResizing = false;
+    let startX = 0;
+    let startWidth = 0;
+    let currentImg: HTMLImageElement | null = null;
+
+    const onMouseDown = (e: MouseEvent) => {
+      const handle = (e.target as HTMLElement).closest(".resize-handle");
+      if (!handle) return;
+
+      currentImg = handle.parentElement?.querySelector("img") ?? null;
+      if (!currentImg) return;
+
+      isResizing = true;
+      startX = e.clientX;
+      startWidth = currentImg.offsetWidth;
+
+      document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("mouseup", onMouseUp);
+    };
+
+    const onMouseMove = (e: MouseEvent) => {
+      if (!isResizing || !currentImg) return;
+      const delta = e.clientX - startX;
+      const newWidth = Math.max(20, startWidth + delta);
+      currentImg.style.width = `${newWidth}px`;
+    };
+
+    const onMouseUp = () => {
+      if (isResizing && currentImg) {
+        // Lấy pos của <img> trong doc
+        const pos = editor.view.posAtDOM(currentImg, 0);
+        const newWidth = currentImg.style.width;
+
+        if (typeof pos === "number") {
+          editor
+            .chain()
+            .focus()
+            .setTextSelection({ from: pos, to: pos + 1 })
+            .updateAttributes("resizableImage", {
+              ...editor.getAttributes("resizableImage"),
+              width: newWidth,
+            })
+            .run();
+        }
+      }
+
+      isResizing = false;
+      currentImg = null;
+      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseup", onMouseUp);
+    };
+
+    editorEl.addEventListener("mousedown", onMouseDown);
+    return () => {
+      editorEl.removeEventListener("mousedown", onMouseDown);
+      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseup", onMouseUp);
+    };
+  }, [editor]);
 
   return (
     <div className="rounded-md border bg-white shadow-sm">

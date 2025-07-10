@@ -47,7 +47,9 @@ const Header = () => {
 
   return (
     <div className="relative flex items-center justify-between w-full px-1 py-2 shadow-md xl:px-4 lg:shadow-none max-w-[1820px] mx-auto">
-      <Logo />
+      <div className="px-6">
+        <Logo />
+      </div>
 
       <MenuProvider>
         {/* desktop: luôn show */}

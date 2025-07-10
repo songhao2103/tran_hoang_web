@@ -1,9 +1,9 @@
-import logo from "../../../assets/images/logos/logo1.jfif"; // Adjust the path as necessary
+import logo from "../../../assets/images/logos/logo-trang.png"; // Adjust the path as necessary
 
-const Logo = () => {
+const Logo = ({ className }: { className?: string }) => {
   return (
-    <a href="/">
-      <img src={logo} alt="Logo" className="h-[50px] w-[50px]" />
+    <a href="/" className="">
+      <img src={logo} alt="Logo" className={`h-[50px] w-[50px] ${className}`} />
     </a>
   );
 };

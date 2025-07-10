@@ -1,4 +1,3 @@
-import React from "react";
 import Tiptap from "../../tiptap/blog-editor/BlogEditor";
 
 const NewsOfAdmin = () => {
