@@ -11,7 +11,9 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
 
   useEffect(() => {
+    debugger;
     const hash = location.state?.hash;
+    const isFormOtherPage = location?.state?.isFormOtherPage;
     if (!hash) return;
 
     // tìm element
@@ -20,7 +22,10 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
       // vị trí thực tế so với top của page
       const topPos = el.getBoundingClientRect().top + window.scrollY;
       // scroll tới trên element 100px
-      window.scrollTo({ top: topPos - 200, behavior: "smooth" });
+      window.scrollTo({
+        top: isFormOtherPage ? topPos - 500 : topPos - 200,
+        behavior: "smooth",
+      });
     }
   }, [location]);
 
