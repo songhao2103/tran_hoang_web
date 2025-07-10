@@ -60,7 +60,6 @@ const InputSearch: React.FC<IInputSearchProps> = ({
   };
 
   const handleNavigate = (item: ISearchDatas) => {
-    debugger;
     console.log(location.pathname);
 
     navigate(item.path, {

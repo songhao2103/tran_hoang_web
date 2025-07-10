@@ -11,7 +11,6 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
 
   useEffect(() => {
-    debugger;
     const hash = location.state?.hash;
     const isFormOtherPage = location?.state?.isFormOtherPage;
     if (!hash) return;
