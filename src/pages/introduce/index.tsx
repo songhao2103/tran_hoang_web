@@ -13,7 +13,7 @@ const Introduce = () => {
     <div>
       <BackgroundLayoutSection>
         <LayoutContent>
-          <div className="flex flex-col justify-between gap-x-10 lg:flex-row gap-y-4 lg:gap-y-0">
+          <div className="flex flex-col justify-between gap-x-10 lg:flex-row gap-y-4 lg:gap-y-0 items-center">
             <SlideInView>
               <AboutUs />
             </SlideInView>

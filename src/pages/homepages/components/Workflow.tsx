@@ -42,7 +42,11 @@ const WorkflowItem = ({
   );
 };
 
-const Workflow = () => {
+const Workflow = ({
+  showTitleSection = false,
+}: {
+  showTitleSection?: boolean;
+}) => {
   const windowWidth = useWindowWidth();
   const numberOfSlide = useMemo(() => {
     if (windowWidth < 480) return 1;
@@ -58,7 +62,10 @@ const Workflow = () => {
           className="flex flex-col items-center justify-center"
           id={SEARCH_DATA_SECTION_ID.workflowHomepage}
         >
-          <SectionTitle title="02_QUY TRÌNH" className="text-center" />
+          {showTitleSection && (
+            <SectionTitle title="03_QUY TRÌNH" className="text-center" />
+          )}
+
           <p className="text-center title-h1 mb-[10px]">Quy trình thực hiện</p>
         </div>
       </SlideInView>

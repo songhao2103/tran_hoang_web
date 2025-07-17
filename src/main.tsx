@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "./styles/index.css";
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />

@@ -1,6 +1,6 @@
 import { MORE_ABOUT_US_DATA } from "../data";
 import { IoMdCheckmark } from "react-icons/io";
-import introduceImage from "../../../assets/images/introduces/introduce_homepage.jpg";
+import introduceImage from "../../../assets/images/slide-images/slide_image_4.png";
 import LayoutContent from "../../../layouts/LayoutContent";
 import ButtonCustom from "../../../components/button/ButtonCustom";
 import SlideInView from "../../../components/scrolls/SlideInView";

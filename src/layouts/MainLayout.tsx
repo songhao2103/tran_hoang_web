@@ -6,12 +6,12 @@ import Footer from "./footer";
 import HeaderAnimation from "./header/components/HeaderAnimation";
 import { HeaderProvider } from "./header/HeaderContext";
 import FloatingActions from "./utils/FloatingActions";
+import BannerSlide from "../pages/homepages/components/BannerSlide";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
 
   useEffect(() => {
-    debugger;
     const hash = location.state?.hash;
     const isFormOtherPage = location?.state?.isFormOtherPage;
     if (!hash) return;
@@ -38,8 +38,13 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 
       {location.pathname !== "/" && <Breadcrumb />}
 
-      <div className="flex-1 max-w-[1820px] w-full mx-auto px-4 xl:px-2 text-gray-600 font-medium">
-        {children}
+      <div className="flex-1 max-w-[1820px] w-full mx-auto  text-gray-600 font-medium">
+        {location.pathname === "/" && (
+          <div className="relative z-0">
+            <BannerSlide />
+          </div>
+        )}
+        <div className="px-1 xl:px-2">{children}</div>
       </div>
 
       <div className="w-full mt-auto">

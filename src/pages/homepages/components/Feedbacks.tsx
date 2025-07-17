@@ -40,8 +40,11 @@ export const Feedbacks = () => {
             className="flex flex-col xl:flex-row justify-between"
             id={SEARCH_DATA_SECTION_ID.feedbackHomePage}
           >
-            <div className="flex flex-col w-full xl:w-[40%]">
-              <SectionTitle title="03_KHÁCH HÀNG NÓI VỀ CHÚNG TÔI" />
+            <div className="flex flex-col items-center w-full xl:w-[40%]">
+              <SectionTitle
+                title="04_KHÁCH HÀNG NÓI VỀ CHÚNG TÔI"
+                className="text-center xl:text-start"
+              />
               <p className="title-h1 text-center w-full xl:text-start mb-[60px] xl:mb-0 ">
                 Trần Hoàng logistic số một
               </p>

@@ -1,10 +1,12 @@
 import { motion, type Variants } from "framer-motion";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import type { IServiceOverviewItem } from "../homepage.type";
 import SlideInView from "../../../components/scrolls/SlideInView";
 import { SERVICES_OVERVIEW_DATA } from "../data";
 import { SEARCH_DATA_SECTION_ID } from "../../../datas/pathSearchDatas";
 import BackgroundLayoutSection from "../../../layouts/BackgroundLayoutSection";
+import { useElementWidth } from "../../../hooks/dom/useElementWidth";
+import SectionTitle from "../../../components/titles/SectionTitle";
 
 const backgroundVariants: Variants = {
   rest: { scale: 1 },
@@ -35,7 +37,19 @@ export const ServiceOverviewItem = ({
 }) => {
   const windowWidth = window.innerWidth;
   const [active, setActive] = useState(windowWidth > 1024 ? false : true);
+  const { ref, width } = useElementWidth<HTMLDivElement>();
   const Icon = serviceItem.icon;
+
+  const positionTitle = useMemo(() => {
+    if (windowWidth < 1024) return "left-[30px] top-[70px]";
+    return "left-[80px] top-[100px]";
+  }, [windowWidth]);
+
+  const positionDescription = useMemo(() => {
+    // if (windowWidth < 768) return "left-[30px] top-[40px]";
+    if (windowWidth < 1024) return "left-[30px] bottom-[70px]";
+    return "left-[60px] bottom-[100px]";
+  }, [windowWidth]);
 
   return (
     <SlideInView
@@ -45,10 +59,11 @@ export const ServiceOverviewItem = ({
       delay={index * 0.1}
     >
       <motion.div
-        className="relative w-full h-64 overflow-hidden rounded-2xl"
+        className="relative w-full max-w-[500px] overflow-hidden rounded-2xl"
         style={{
           backgroundImage: `url(${serviceItem.backgroundImage})`,
           backgroundPosition: "center",
+          height: width * 1.4,
         }}
         id={SEARCH_DATA_SECTION_ID.serviciesHomepage}
         // sử dụng cùng 2 hành vi hover + click
@@ -56,6 +71,7 @@ export const ServiceOverviewItem = ({
         onHoverEnd={() => setActive(false)}
         onClick={() => setActive((prev) => !prev)}
         animate={active ? "hover" : "rest"}
+        ref={ref}
       >
         {/* overlay đen */}
         <motion.div
@@ -71,29 +87,31 @@ export const ServiceOverviewItem = ({
         />
 
         {/* tiêu đề */}
-        <p className="relative top-[30px] left-[30px] title-h4 !text-light max-w-[60%] z-40">
+        <p
+          className={`relative title-h1 text-left !text-light max-w-[70%] z-40 ${positionTitle}`}
+        >
           {serviceItem.title}
         </p>
 
         {/* icon */}
         <motion.div
-          className="absolute bottom-[70px] left-[50px] z-30"
+          className="absolute bottom-[120px] left-[60px] z-30"
           variants={iconVariants}
         >
-          <Icon size={48} className="text-white" />
+          <Icon size={100} className="text-white" />
         </motion.div>
 
         {/* content (description + link) */}
         <motion.div
-          className="absolute bottom-[40px] left-[30px] flex flex-col p-4 text-white z-30"
+          className={`absolute flex flex-col p-4 text-white z-30 ${positionDescription}`}
           variants={contentVariants}
         >
-          <p className="text-xs max-w-[60%] text-gray-100">
+          <p className="text-lg max-w-[80%] text-gray-100">
             {serviceItem.description}
           </p>
           <a
             href={serviceItem.path}
-            className="mt-2 text-xs underline cursor-pointer"
+            className="mt-2 underline cursor-pointer text-lg hover:text-secondary text-left px-4"
           >
             Chi tiết
           </a>
@@ -106,8 +124,19 @@ export const ServiceOverviewItem = ({
 const ServicesOverview = () => {
   return (
     <BackgroundLayoutSection>
-      <div className="w-full ">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-6">
+      <div className="w-full flex justify-center flex-col items-center">
+        <SlideInView className="" direction="up" triggerOnce>
+          <div
+            className="flex flex-col items-center justify-center"
+            id={SEARCH_DATA_SECTION_ID.workflowHomepage}
+          >
+            <SectionTitle title="02_DỊCH VỤ" className="text-center" />
+            <p className="text-center title-h1 mb-[10px]">
+              Dịch vụ của chúng tôi
+            </p>
+          </div>
+        </SlideInView>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-3 xl:gap-6 text-center mt-12">
           {SERVICES_OVERVIEW_DATA.map((serviceItem, index) => (
             <ServiceOverviewItem
               key={index}

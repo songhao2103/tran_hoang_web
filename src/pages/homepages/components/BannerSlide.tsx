@@ -2,15 +2,15 @@ import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "../style/banner.css";
 
-import banner1 from "../../../assets/images/banners/Bảng vẽ 1.png";
-import banner2 from "../../../assets/images/banners/Bảng vẽ 1 sao chép.png";
-import banner3 from "../../../assets/images/banners/Bảng vẽ 1 sao chép copy.png";
+import banner_1 from "../../../assets/images/slide-images/slide_image_1.png";
+import banner_2 from "../../../assets/images/slide-images/slide_image_2.png";
+import banner_3 from "../../../assets/images/slide-images/slide_image_3.png";
 import type { IBannerItem } from "../homepage.type";
 
 const bannerList: IBannerItem[] = [
-  { imageUrl: banner1, title: "Lorem, ipsum dolor sit amet" },
-  { imageUrl: banner2, title: "Lorem, ipsum dolor sit amet" },
-  { imageUrl: banner3, title: "Lorem, ipsum dolor sit amet" },
+  { imageUrl: banner_1, title: "Lorem, ipsum dolor sit amet" },
+  { imageUrl: banner_2, title: "Lorem, ipsum dolor sit amet" },
+  { imageUrl: banner_3, title: "Lorem, ipsum dolor sit amet" },
 ];
 
 interface IBannerItemProps {
@@ -49,7 +49,7 @@ const BannerSlide = () => {
         speed={1500}
         modules={[Autoplay, Pagination, Navigation, EffectFade]}
         loop
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        autoplay={{ delay: 10000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         navigation
         className="h-full overflow-hidden "

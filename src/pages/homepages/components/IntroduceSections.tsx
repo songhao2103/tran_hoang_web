@@ -10,8 +10,8 @@ const IntroduceSectionItem: React.FC<IIntroduceSectionItemProps> = ({
 }) => {
   const Icon = introduceSection.icon;
   return (
-    <div className="w-full p-[50px] rounded-[10px] shadow-md border flex flex-col items-center max-w-[500px] h-full bg-white hover:shadow-lg hover:-translate-y-1 transition transition-medium">
-      <div className="w-[70px] h-[70px] rounded-full border flex items-center justify-center">
+    <div className="w-full p-[30px] lg:p-[50px] rounded-[10px] shadow-md border flex flex-col items-center max-w-[500px] h-full bg-white hover:shadow-lg hover:-translate-y-1 transition transition-medium">
+      <div className=" w-[70px] h-[70px] rounded-full border flex items-center justify-center">
         {<Icon size={40} />}
       </div>
       <div className="flex items-center flex-col mt-6">
@@ -21,10 +21,11 @@ const IntroduceSectionItem: React.FC<IIntroduceSectionItemProps> = ({
     </div>
   );
 };
+
 const IntroduceSections = () => {
   return (
     <div className="flex justify-center">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-6 lg:gap-y-0">
+      <div className="grid grid-cols-3 lg:grid-cols-3 gap-x-6 gap-y-6 lg:gap-y-0">
         {INTRODUCE_SECTIONS_DATA.map((introduceSection, index) => (
           <IntroduceSectionItem
             introduceSection={introduceSection}

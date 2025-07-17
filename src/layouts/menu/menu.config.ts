@@ -19,14 +19,12 @@ export const MENU_CONFIG: TMenuConfig[] = [
         title: "Tìm nguồn hàng",
         path: ROUTE_PATH.FIND_SOURCE_GOODS,
       },
+
       {
         title: "Vận chuyển chính ngạch",
         path: ROUTE_PATH.OFFICIAL_TRANSPORTATION,
       },
-      {
-        title: "Ghép Containers",
-        path: ROUTE_PATH.COMBINE_CONTAINERS,
-      },
+
       {
         title: "Thanh toán hộ",
         path: ROUTE_PATH.PAY_ON_BEHALF,

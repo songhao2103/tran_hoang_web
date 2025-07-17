@@ -16,7 +16,7 @@ const Statistical = () => {
         <SlideInView>
           <div className="" id={SEARCH_DATA_SECTION_ID.statisticsHomepage}>
             <div>
-              <SectionTitle title="04_SỐ LIỆU" className="text-center" />
+              <SectionTitle title="05_SỐ LIỆU" className="text-center" />
               <p className="text-center title-h1">
                 Số liệu ấn tượng năm <span>{currentYear}</span>
               </p>

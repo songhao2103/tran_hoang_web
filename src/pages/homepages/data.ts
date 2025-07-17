@@ -8,15 +8,22 @@ import type {
 import { PiWarehouse } from "react-icons/pi";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
 import { IoIosFlash } from "react-icons/io";
-import bgcImage from "../../assets/images/banners/banner1.jpg";
-import imageUser1 from "../../assets/images/banners/banner1.jpg";
-import imageUser2 from "../../assets/images/banners/banner2.png";
-import imageUser3 from "../../assets/images/banners/banner3.jpg";
+import thanh_toan from "../../assets/images/services/thanh_toan.jpg";
+import van_chuyen from "../../assets/images/services/van_chuyen.jpg";
+import tim_nguon_hang from "../../assets/images/services/tim_nguon_hang.jpg";
+
+import avatar_dinh_tu from "../../assets/images/feedbacks/avatar_dinh_tu.jpg";
+import avatar_duc_anh from "../../assets/images/feedbacks/avatar_duc_anh.jpg";
+import avatar_my_kieu from "../../assets/images/feedbacks/avatar_my_kieu.jpg";
+import avatar_thanh_ha from "../../assets/images/feedbacks/avatar_thanh_ha.jpg";
+import avatar_tien_dat from "../../assets/images/feedbacks/avatar_tien_dat.jpg";
+
 import { LuPackageSearch } from "react-icons/lu";
 import { PiFireTruck } from "react-icons/pi";
-import { PiShippingContainerDuotone } from "react-icons/pi";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { ROUTE_PATH } from "../../routes/routePath";
+
+import bgcImage from "../../assets/images/slide-images/slide_image_3.png";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   Thông tin về chúng tôi
@@ -24,7 +31,7 @@ import { ROUTE_PATH } from "../../routes/routePath";
 export const INTRODUCE_SECTIONS_DATA: IIntroduceSectionItem[] = [
   {
     icon: PiWarehouse,
-    title: "Kho bãi chính chủ Trung-Việt",
+    title: "Kho bãi Trung-Việt",
     description:
       "Sở hữu kho hàng tại Trung Quốc và Việt Nam hoàn toàn chủ động nguồn hàng, xử lý nhanh chóng",
   },
@@ -65,7 +72,7 @@ export const SERVICES_OVERVIEW_DATA: IServiceOverviewItem[] = [
     title: "Tìm nguồn hàng Trung Quốc",
     description:
       "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
-    backgroundImage: bgcImage,
+    backgroundImage: tim_nguon_hang,
     path: ROUTE_PATH.FIND_SOURCE_GOODS,
   },
   {
@@ -73,23 +80,16 @@ export const SERVICES_OVERVIEW_DATA: IServiceOverviewItem[] = [
     title: "Vận chuyển chính ngạch",
     description:
       "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
-    backgroundImage: bgcImage,
+    backgroundImage: van_chuyen,
     path: ROUTE_PATH.OFFICIAL_TRANSPORTATION,
   },
-  {
-    icon: PiShippingContainerDuotone,
-    title: "Ghép Container chính ngạch",
-    description:
-      "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
-    backgroundImage: bgcImage,
-    path: ROUTE_PATH.COMBINE_CONTAINERS,
-  },
+
   {
     icon: RiSecurePaymentLine,
     title: "Thanh toán hộ",
     description:
       "Tìm kiếm nguồn hàng chất lượng, giá tốt từ các nhà cung cấp Trung Quốc.",
-    backgroundImage: bgcImage,
+    backgroundImage: thanh_toan,
     path: ROUTE_PATH.PAY_ON_BEHALF,
   },
 ];
@@ -137,28 +137,42 @@ export const WORKFLOW_STEPS: IWorkflowStep[] = [
 ];
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//   Quy trình làm việc
+//   Feedback
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const FAKE_FEEDBACK_DATAS: IFeedbackItem[] = [
   {
-    userImage: imageUser1,
+    userImage: avatar_tien_dat,
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum impedit corporis id omnis maxime assumenda sequi aliquid",
-    userName: "Song Hào",
-    note: "Nhân viên",
+      "Anh đã có trải nghiệm tuyệt vời khi sử dụng dịch vụ vận chuyển của các bạn. Các bạn giúp anh rất nhiều khi giao hàng đến nơi một các an toàn và kịp thời. Anh đã mở rộng thị trường xuất khẩu và xây dựng mối quan hệ kinh doanh lâu dài với các đối tác quốc tế. Hi vọng tương lai, anh và Trần Hoàng sẽ có nhiều cơ hội hợp tác bền vừng và thuận lợi.",
+    userName: "Mr. Trần Tiến Đạt",
+    note: "Business Ngành Hàng Thương Mại",
   },
   {
-    userImage: imageUser2,
+    userImage: avatar_my_kieu,
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum impedit corporis id omnis maxime assumenda sequi aliquid",
-    userName: "Song Hào",
-    note: "Nhân viên",
+      "Trần Hoàng Logistics không chỉ cung cấp dịch vụ vận chuyển chất lượng mà còn có giá cả hợp lý. Mình luôn tin tưởng và lựa chọn Trần Hoàng cho mọi nhu cầu vận chuyển của mình. Sự linh hoạt trong các gói dịch vụ và cam kết đáp ứng đúng hẹn đã khiến mình trở thành một khách hàng trung thành của Trần Hoàng Logistics",
+    userName: "Ms. Mỹ Kiều",
+    note: "Business ngành hàng nội thất",
   },
   {
-    userImage: imageUser3,
+    userImage: avatar_dinh_tu,
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum impedit corporis id omnis maxime assumenda sequi aliquid",
-    userName: "Song Hào",
-    note: "Nhân viên",
+    userName: "Mr. Nguyễn Đình Tú",
+    note: "Bussiness Ngành hàng máy móc công nghiệp",
+  },
+  {
+    userImage: avatar_duc_anh,
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum impedit corporis id omnis maxime assumenda sequi aliquid",
+    userName: "Mr. Nguyễn Đức Anh",
+    note: "Business Ngành hàng nội thất",
+  },
+  {
+    userImage: avatar_thanh_ha,
+    content:
+      "Trần Hoàng Logistics đã giúp tớ tiết kiệm thời gian và công sức khi order hàng. Quy trình đặt hàng cũng thuận tiện cho mình thao tác và giao nhận cũng khó nhanh chóng. Hơn nữa, các bạn cung cấp các dịch vụ bổ sung như bảo hiểm hàng hóa và theo dõi đơn hàng trực tuyến, giúp tớ cảm thấy an tâm hơn khi gửi hàng",
+    userName: "Ms. Thanh Hà",
+    note: "Business ngành hàng trang trí",
   },
 ];

@@ -1,30 +1,34 @@
 import { type ICompanyHistoryItem } from "./introduce.type";
-import image from "../../assets/images/introduces/introduce_homepage.jpg";
+import ls_2017 from "../../assets/images/histories/lich_su_2017.jpg";
+import ls_2019 from "../../assets/images/histories/lich_su_2019.jpg";
+import ls_2021 from "../../assets/images/histories/lich_su_2021.jpg";
+import ls_2023 from "../../assets/images/histories/lich_su_2023.jpg";
+import image from "../../assets/images/histories/lich_su_2019.jpg";
 
 export const COMPANY_HISTORIES_DATA: ICompanyHistoryItem[] = [
   {
-    image: image,
+    image: ls_2017,
     title: "Thành lập công ty",
     description:
       "Trần Hoàng Logistics chính thức đi vào hoạt động, cung cấp dịch vụ vận chuyển tuyến Trung – Việt.",
     year: 2017,
   },
   {
-    image: image,
+    image: ls_2019,
     title: "Phát triển kho bãi và đội ngũ vận hành",
     description:
       "Mở rộng kho tại Hà Nội và thiết lập kho đối tác tại Bằng Tường (Trung Quốc), hoàn thiện bộ máy vận hành.",
     year: 2019,
   },
   {
-    image: image,
+    image: ls_2021,
     title: "Triển khai dịch vụ chính ngạch",
     description:
       "Trần Hoàng chuyển hướng chiến lược, cung cấp dịch vụ vận chuyển chính ngạch với đầy đủ hóa đơn – chứng từ – hỗ trợ hoàn thuế.",
     year: 2021,
   },
   {
-    image: image,
+    image: ls_2023,
     title: "Mở rộng hệ thống kho và dịch vụ vận chuyển đường biển",
     description:
       "Thiết lập kho chính chủ tại Pò Chài (Trung Quốc) và cảng Hải Phòng. Triển khai dịch vụ vận chuyển container.",

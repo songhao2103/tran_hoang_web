@@ -1,4 +1,4 @@
-import BannerSlide from "./components/BannerSlide";
+// import BannerSlide from "./components/BannerSlide";
 import { Feedbacks } from "./components/Feedbacks";
 import IntroduceSections from "./components/IntroduceSections";
 import MoreAboutUs from "./components/MoreAboutUs";
@@ -10,9 +10,9 @@ const HomePage = () => {
   return (
     <div className="w-full">
       {/* Banner - không chứa introduce */}
-      <div className="relative z-0">
+      {/* <div className="relative z-0">
         <BannerSlide />
-      </div>
+      </div> */}
 
       {/* Introduce - đè lên banner */}
       <div className="relative z-10  -mt-[30px] lg:-mt-[60px] xl:-mt-[100px] flex justify-center">
@@ -28,7 +28,7 @@ const HomePage = () => {
       <ServicesOverview />
 
       {/* Workflow */}
-      <Workflow />
+      <Workflow showTitleSection />
 
       {/* Feedbacks */}
       <Feedbacks />
