@@ -148,3 +148,28 @@ Transition
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
+
+.no-select {
+  -webkit-user-select: none; /* Chrome, Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Chuẩn CSS */
+}
+
+/* Chrome, Edge, Safari */
+.scrollbar-light::-webkit-scrollbar {
+  height: 2px; /* độ dày thanh cuộn ngang */
+}
+.scrollbar-light::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.01); /* track rất nhạt */
+}
+.scrollbar-light::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1); /* thumb nhẹ */
+  border-radius: 3px;
+}
+
+/* Firefox */
+.scrollbar-light {
+  scrollbar-width: thin; /* mỏng */
+  scrollbar-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.01);
+}

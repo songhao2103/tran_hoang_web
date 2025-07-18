@@ -1,49 +1,46 @@
-import React from "react";
 import { COST_OF_ORDER_LIST } from "../data";
 import { GiCheckMark } from "react-icons/gi";
 
-const CostOfOrder: React.FC = () => {
+const CostOfOrder = () => {
   return (
-    <div className="overflow-x-auto rounded border border-gray-400">
-      <table className="min-w-full border-collapse text-sm">
-        <thead className="bg-dark text-white">
-          <tr>
-            <th className="border border-gray-400 px-4 py-2 text-left">
-              Tên chi phí
-            </th>
-            <th className="border border-gray-400 px-4 py-2 text-left">
-              Giải thích
-            </th>
-            <th className="border border-gray-400 px-4 py-2 text-center">
-              Bắt buộc*
-            </th>
-            <th className="border border-gray-400 px-4 py-2 text-center">
-              Tùy chọn
-            </th>
+    <table className="w-full text-sm border-collapse min-w-[980px]">
+      <thead className="text-white bg-dark">
+        <tr>
+          <th className="px-4 py-2 text-center border border-gray-400">
+            Tên chi phí
+          </th>
+          <th className="px-4 py-2 text-center border border-gray-400">
+            Giải thích
+          </th>
+          <th className="px-4 py-2 text-center border border-gray-400">
+            Bắt buộc*
+          </th>
+          <th className="px-4 py-2 text-center border border-gray-400">
+            Tùy chọn
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {COST_OF_ORDER_LIST.map((item, index) => (
+          <tr key={index} className="hover:bg-gray-50">
+            <td className="px-4 py-2 border border-gray-400">{item.name}</td>
+            <td className="px-4 py-2 border border-gray-400">
+              {item.description}
+            </td>
+            <td className="px-4 py-2 text-center border border-gray-400">
+              {item.required && (
+                <GiCheckMark className="mx-auto text-green-600" size={18} />
+              )}
+            </td>
+            <td className="px-4 py-2 text-center border border-gray-400">
+              {!item.required && (
+                <GiCheckMark className="mx-auto text-blue-600" size={18} />
+              )}
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {COST_OF_ORDER_LIST.map((item, index) => (
-            <tr key={index} className="hover:bg-gray-50">
-              <td className="border border-gray-400 px-4 py-2">{item.name}</td>
-              <td className="border border-gray-400 px-4 py-2">
-                {item.description}
-              </td>
-              <td className="border border-gray-400 px-4 py-2 text-center">
-                {item.required && (
-                  <GiCheckMark className="mx-auto text-green-600" size={18} />
-                )}
-              </td>
-              <td className="border border-gray-400 px-4 py-2 text-center">
-                {!item.required && (
-                  <GiCheckMark className="mx-auto text-blue-600" size={18} />
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+        ))}
+      </tbody>
+    </table>
   );
 };
 

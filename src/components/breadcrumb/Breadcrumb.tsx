@@ -31,12 +31,12 @@ const Breadcrumb = () => {
   }, [location.pathname]);
 
   return (
-    <nav className="text-sm text-gray-500 relative">
-      <div className=" ">
+    <nav className="relative text-sm text-gray-500">
+      <div className="">
         <img src={imageBreadcrumb} alt="" className="object-cover w-full" />
       </div>
 
-      <div className="bg-dark py-2 xl:py-6 px-3">
+      <div className="px-3 py-2 bg-dark xl:py-6">
         <div className="flex flex-col gap-y-4 lg:bottom-[50px] lg:left-[70px] bottom-[50px] left-[20px] max-w-[1820px] mx-auto ">
           {/* {namePage && <p className="title-h1 !text-gray-100">{namePage}</p>} */}
           <div className="flex items-center gap-x-2">
@@ -52,9 +52,9 @@ const Breadcrumb = () => {
                 return (
                   <li
                     key={index}
-                    className="flex items-center gap-1 gap-x-2 mt-1"
+                    className="flex items-center gap-1 mt-1 gap-x-2"
                   >
-                    <span className="text-secondary text-xl font-bold">-</span>
+                    <span className="text-xl font-bold text-secondary">-</span>
                     {isLast ? (
                       <span className="title-h4 font-semibold !text-light capitalize">
                         {menu.title}
